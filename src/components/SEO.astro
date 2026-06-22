@@ -1,0 +1,39 @@
+---
+// Componente de SEO. Centraliza todas as meta tags numa coisa só.
+// Toda página passa por aqui, então o "miolo" de descoberta fica consistente.
+interface Props {
+  titulo: string;
+  descricao: string;
+  imagem?: string;
+  tipo?: "website" | "article";
+}
+
+const { titulo, descricao, imagem = "/og-image.png", tipo = "website" } = Astro.props;
+
+// URL absoluta e canônica desta página (evita conteúdo duplicado aos olhos do Google).
+const urlCanonica = new URL(Astro.url.pathname, Astro.site).href;
+const imagemAbsoluta = new URL(imagem, Astro.site).href;
+---
+
+<!-- Básico -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>{titulo}</title>
+<meta name="description" content={descricao} />
+<link rel="canonical" href={urlCanonica} />
+<meta name="author" content="Financeiro de Dono" />
+
+<!-- Open Graph (WhatsApp, LinkedIn, Facebook) -->
+<meta property="og:type" content={tipo} />
+<meta property="og:title" content={titulo} />
+<meta property="og:description" content={descricao} />
+<meta property="og:url" content={urlCanonica} />
+<meta property="og:image" content={imagemAbsoluta} />
+<meta property="og:locale" content="pt_BR" />
+<meta property="og:site_name" content="Financeiro de Dono" />
+
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={titulo} />
+<meta name="twitter:description" content={descricao} />
+<meta name="twitter:image" content={imagemAbsoluta} />

@@ -1,0 +1,41 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+
+// Seus 12 blocos, exatamente os do Index.tsx original.
+import Navbar from "@/components/Navbar";
+import HeroSection from "@/components/HeroSection";
+import ProblemSection from "@/components/ProblemSection";
+import HowItWorksSection from "@/components/HowItWorksSection";
+import AboutSection from "@/components/AboutSection";
+import SegmentsSection from "@/components/SegmentsSection";
+import PlansSection from "@/components/PlansSection";
+import FAQSection from "@/components/FAQSection";
+import InstagramSection from "@/components/InstagramSection";
+import CTASection from "@/components/CTASection";
+import Footer from "@/components/FooterSection";
+import WhatsAppButton from "@/components/WhatsAppButton";
+---
+
+<BaseLayout
+  titulo="Financeiro de Dono — BPO Financeiro & CFO sob Demanda"
+  descricao="Ajudamos donos de empresas de serviço a organizar o financeiro, ganhar previsibilidade e tomar decisões sem quebrar o caixa."
+>
+  {/*
+    O texto de TODOS os blocos sai no HTML (o robô lê tudo, sempre).
+    client:load  = liga já no carregamento (menu fixo + topo da página)
+    client:visible = liga quando rola até o bloco (anima e aparece)
+    sem diretiva = HTML puro, zero JS (blocos sem animação)
+  */}
+  <Navbar client:load />
+  <HeroSection client:load />
+  <ProblemSection client:visible />
+  <HowItWorksSection client:visible />
+  <AboutSection client:visible />
+  <SegmentsSection client:visible />
+  <PlansSection client:visible />
+  <FAQSection client:visible />
+  <InstagramSection client:visible />
+  <CTASection client:visible />
+  <Footer />
+  <WhatsAppButton />
+</BaseLayout>

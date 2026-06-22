@@ -1,0 +1,130 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+
+interface Props {
+  titulo: string;
+  descricao: string;
+  data: Date;
+  atualizadoEm?: Date;
+  autor: string;
+  categoria: string;
+  capa?: string;
+  slug: string;
+}
+
+const { titulo, descricao, data, atualizadoEm, autor, categoria, capa, slug } =
+  Astro.props;
+
+const urlArtigo = new URL(`/conteudos/${slug}`, Astro.site).href;
+
+function formatarData(d: Date) {
+  return d.toLocaleDateString("pt-BR", {
+    day: "2-digit",
+    month: "long",
+    year: "numeric",
+  });
+}
+
+// Dados estruturados do artigo (schema.org/Article). É o que permite a uma IA
+// citar "segundo o Financeiro de Dono..." com data, autor e título corretos.
+const artigoSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: titulo,
+  description: descricao,
+  datePublished: data.toISOString(),
+  dateModified: (atualizadoEm ?? data).toISOString(),
+  author: { "@type": "Person", name: autor },
+  publisher: {
+    "@type": "Organization",
+    name: "Financeiro de Dono",
+    url: "https://www.financeirodedono.com.br",
+  },
+  mainEntityOfPage: { "@type": "WebPage", "@id": urlArtigo },
+  ...(capa ? { image: new URL(capa, Astro.site).href } : {}),
+};
+
+// Trilha de navegação (ajuda o Google a entender a hierarquia do site).
+const breadcrumb = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Início", item: Astro.site?.href },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Conteúdos",
+      item: new URL("/conteudos", Astro.site).href,
+    },
+    { "@type": "ListItem", position: 3, name: titulo, item: urlArtigo },
+  ],
+};
+---
+
+<BaseLayout titulo={titulo} descricao={descricao} imagem={capa} tipo="article">
+  <script type="application/ld+json" set:html={JSON.stringify(artigoSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumb)} />
+
+  <main class="mx-auto max-w-3xl px-5 py-12 md:py-16">
+    <nav class="mb-8 text-sm text-muted-foreground">
+      <a href="/" class="hover:text-foreground">Início</a>
+      <span class="mx-2">/</span>
+      <a href="/conteudos" class="hover:text-foreground">Conteúdos</a>
+    </nav>
+
+    <header class="mb-10">
+      <p class="mb-3 text-sm font-medium uppercase tracking-wide text-primary">
+        {categoria}
+      </p>
+      <h1 class="text-3xl font-bold leading-tight text-foreground md:text-4xl">
+        {titulo}
+      </h1>
+      <p class="mt-4 text-lg text-muted-foreground">{descricao}</p>
+      <div class="mt-6 flex items-center gap-2 text-sm text-muted-foreground">
+        <span>{autor}</span>
+        <span>·</span>
+        <time datetime={data.toISOString()}>{formatarData(data)}</time>
+        {
+          atualizadoEm && (
+            <>
+              <span>·</span>
+              <span>atualizado em {formatarData(atualizadoEm)}</span>
+            </>
+          )
+        }
+      </div>
+    </header>
+
+    {
+      capa && (
+        <img
+          src={capa}
+          alt={titulo}
+          class="mb-10 w-full rounded-xl border border-border"
+        />
+      )
+    }
+
+    <!-- "prose" estiliza automaticamente títulos, listas, links e parágrafos do Markdown -->
+    <article
+      class="prose prose-neutral max-w-none prose-headings:text-foreground prose-p:text-foreground/90 prose-a:text-primary prose-strong:text-foreground"
+    >
+      <slot />
+    </article>
+
+    <div class="mt-16 rounded-xl border border-border bg-card p-8 text-center">
+      <p class="text-lg font-semibold text-foreground">
+        Quer enxergar o financeiro da sua empresa com essa clareza?
+      </p>
+      <p class="mt-2 text-muted-foreground">
+        Agende um diagnóstico gratuito de 30 minutos.
+      </p>
+      <a
+        href="https://wa.me/5548996645113?text=Quero%20meu%20diagn%C3%B3stico%20gratuito"
+        class="mt-5 inline-block rounded-lg bg-primary px-6 py-3 font-medium text-primary-foreground transition hover:opacity-90"
+      >
+        Falar com o Financeiro de Dono
+      </a>
+    </div>
+  </main>
+</BaseLayout>

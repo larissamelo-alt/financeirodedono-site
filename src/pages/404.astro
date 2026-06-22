@@ -1,0 +1,32 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  titulo="Página não encontrada — Financeiro de Dono"
+  descricao="A página que você procura não existe ou foi movida."
+>
+  <main
+    class="mx-auto flex min-h-[60vh] max-w-xl flex-col items-center justify-center px-5 text-center"
+  >
+    <p class="text-6xl font-bold text-primary">404</p>
+    <h1 class="mt-4 text-2xl font-semibold text-foreground">
+      Essa página não existe
+    </h1>
+    <p class="mt-2 text-muted-foreground">
+      O link pode estar errado ou o conteúdo foi movido.
+    </p>
+    <div class="mt-8 flex gap-4">
+      <a
+        href="/"
+        class="rounded-lg bg-primary px-5 py-2.5 font-medium text-primary-foreground hover:opacity-90"
+        >Ir para o início</a
+      >
+      <a
+        href="/conteudos"
+        class="rounded-lg border border-border px-5 py-2.5 font-medium text-foreground hover:bg-muted"
+        >Ver conteúdos</a
+      >
+    </div>
+  </main>
+</BaseLayout>

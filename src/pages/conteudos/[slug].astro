@@ -1,0 +1,30 @@
+---
+import { getCollection, render } from "astro:content";
+import ArtigoLayout from "@/layouts/ArtigoLayout.astro";
+
+// Gera uma página estática para cada artigo no momento do build.
+// É isto que faz cada conteúdo virar HTML de verdade (lido por Google e IAs).
+export async function getStaticPaths() {
+  const artigos = await getCollection("conteudos", ({ data }) => !data.rascunho);
+  return artigos.map((artigo) => ({
+    params: { slug: artigo.slug },
+    props: { artigo },
+  }));
+}
+
+const { artigo } = Astro.props;
+const { Content } = await render(artigo);
+---
+
+<ArtigoLayout
+  titulo={artigo.data.titulo}
+  descricao={artigo.data.descricao}
+  data={artigo.data.data}
+  atualizadoEm={artigo.data.atualizadoEm}
+  autor={artigo.data.autor}
+  categoria={artigo.data.categoria}
+  capa={artigo.data.capa}
+  slug={artigo.slug}
+>
+  <Content />
+</ArtigoLayout>

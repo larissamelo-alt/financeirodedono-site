@@ -1,0 +1,55 @@
+---
+import SEO from "@/components/SEO.astro";
+import "@/styles/global.css";
+
+interface Props {
+  titulo: string;
+  descricao: string;
+  imagem?: string;
+  tipo?: "website" | "article";
+}
+
+const { titulo, descricao, imagem, tipo } = Astro.props;
+
+// Dados estruturados da empresa (schema.org). É isto que faz o Google e as IAs
+// entenderem QUEM é o autor por trás do conteúdo — e ganharem confiança para citar.
+const organizacao = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Financeiro de Dono",
+  url: "https://www.financeirodedono.com.br",
+  description:
+    "BPO Financeiro e CFO sob demanda para donos de empresas de serviço que faturam entre R$ 50k e R$ 500k por mês.",
+  founder: { "@type": "Person", name: "Jonny Elias" },
+  areaServed: "BR",
+  knowsAbout: [
+    "BPO Financeiro",
+    "CFO sob demanda",
+    "Fluxo de caixa",
+    "DRE",
+    "Gestão financeira para clínicas",
+  ],
+};
+---
+
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <SEO titulo={titulo} descricao={descricao} imagem={imagem} tipo={tipo} />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify(organizacao)}
+    />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
