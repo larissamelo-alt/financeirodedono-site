@@ -1,24 +1,46 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
 
 // Seus 12 blocos, exatamente os do Index.tsx original.
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
+import DonoMethodSection from "@/components/DonoMethodSection";
 import ProblemSection from "@/components/ProblemSection";
 import HowItWorksSection from "@/components/HowItWorksSection";
 import AboutSection from "@/components/AboutSection";
+import TestimonialsSection from "@/components/TestimonialsSection";
 import SegmentsSection from "@/components/SegmentsSection";
 import PlansSection from "@/components/PlansSection";
 import FAQSection from "@/components/FAQSection";
+import ContentPreviewSection from "@/components/ContentPreviewSection";
 import InstagramSection from "@/components/InstagramSection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/FooterSection";
 import WhatsAppButton from "@/components/WhatsAppButton";
+
+// Os 3 conteúdos mais recentes, pra prévia na home. Mesma fonte de dados da
+// página /conteudos — se cadastrar um artigo novo, ele aparece aqui sozinho.
+const artigosRecentes = (await getCollection("conteudos", ({ data }) => !data.rascunho))
+  .sort((a, b) => b.data.data.valueOf() - a.data.data.valueOf())
+  .slice(0, 3)
+  .map((artigo) => ({
+    slug: artigo.slug,
+    titulo: artigo.data.titulo,
+    descricao: artigo.data.descricao,
+    categoria: artigo.data.categoria,
+    capa: artigo.data.capa,
+    dataFormatada: artigo.data.data.toLocaleDateString("pt-BR", {
+      day: "2-digit",
+      month: "short",
+      year: "numeric",
+    }),
+  }));
 ---
 
 <BaseLayout
-  titulo="Financeiro de Dono — BPO Financeiro & CFO sob Demanda"
-  descricao="Ajudamos donos de empresas de serviço a organizar o financeiro, ganhar previsibilidade e tomar decisões sem quebrar o caixa."
+  titulo="Financeiro de Dono | Clareza pra decidir, não pra sobreviver"
+  descricao="Terceirização financeira para donos de empresa de serviço que faturam, mas não sabem pra onde o dinheiro vai. Organizamos o caixa para você decidir com clareza, sem depender de achismo."
 >
   {/*
     O texto de TODOS os blocos sai no HTML (o robô lê tudo, sempre).
@@ -28,12 +50,15 @@ import WhatsAppButton from "@/components/WhatsAppButton";
   */}
   <Navbar client:load />
   <HeroSection client:load />
+  <DonoMethodSection client:visible />
   <ProblemSection client:visible />
   <HowItWorksSection client:visible />
   <AboutSection client:visible />
+  <TestimonialsSection client:visible />
   <SegmentsSection client:visible />
   <PlansSection client:visible />
   <FAQSection client:visible />
+  <ContentPreviewSection artigos={artigosRecentes} client:visible />
   <InstagramSection client:visible />
   <CTASection client:visible />
   <Footer />
