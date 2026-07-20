@@ -15,23 +15,22 @@ const HeroSection = () => {
           <div>
             <ScrollReveal>
               <span className="inline-block bg-primary-foreground/10 text-primary-foreground/90 text-xs font-semibold px-4 py-1.5 rounded-full border border-primary-foreground/15 mb-6">
-                BPO Financeiro & CFO sob demanda
+                Terceirização financeira (BPO) para dono de empresa de serviço
               </span>
             </ScrollReveal>
 
             <ScrollReveal delay={100}>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-primary-foreground leading-[1.1] mb-6">
-                Sua empresa fatura.
-                <br />
-                Mas o caixa
-                <br />
-                sempre <span className="text-accent">aperta.</span>
+                Clareza <span className="text-accent">pra decidir.</span>
               </h1>
             </ScrollReveal>
 
             <ScrollReveal delay={200}>
-              <p className="text-lg text-primary-foreground/70 max-w-lg mb-8 leading-relaxed">
-                Ajudamos donos de empresas de serviço a organizar o financeiro, ganhar previsibilidade e tomar decisões sem quebrar o caixa.
+              <p className="text-lg text-primary-foreground/70 max-w-lg mb-2 leading-relaxed">
+                Não pra sobreviver. Você já fatura. Só falta decidir com dado, não com medo.
+              </p>
+              <p className="text-base text-primary-foreground/60 max-w-lg mb-8 leading-relaxed">
+                Cuidamos da rotina financeira da sua empresa para você ver o caixa com clareza e decidir sem depender de achismo.
               </p>
             </ScrollReveal>
 
@@ -98,7 +97,7 @@ const HeroSection = () => {
               <div className="bg-accent/15 border border-accent/25 rounded-xl px-4 py-3 flex items-center gap-3">
                 <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
                 <span className="text-sm text-primary-foreground/90 font-medium">
-                  Diagnóstico disponível agora — <span className="text-accent font-bold">gratuito</span>
+                  Descubra em 30 min se você decide no <span className="text-accent font-bold">escuro</span>
                 </span>
               </div>
             </div>
