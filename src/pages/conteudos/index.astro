@@ -6,6 +6,8 @@ import { getCollection } from "astro:content";
 const artigos = (await getCollection("conteudos", ({ data }) => !data.rascunho))
   .sort((a, b) => b.data.data.valueOf() - a.data.data.valueOf());
 
+const categorias = ["Todos", ...Array.from(new Set(artigos.map((a) => a.data.categoria)))];
+
 function formatarData(d: Date) {
   return d.toLocaleDateString("pt-BR", {
     day: "2-digit",
@@ -13,52 +15,182 @@ function formatarData(d: Date) {
     year: "numeric",
   });
 }
+
+// Materiais de apoio. Preencher "href" e trocar "disponivel" para true quando
+// cada material estiver pronto (planilha hospedada, calculadora publicada,
+// curso gravado). Enquanto disponivel = false, o card mostra "Em breve" e não
+// é clicável — assim a seção já pode ir ao ar sem prometer algo que não existe.
+const materiais = [
+  {
+    titulo: "Calculadora de capital de giro",
+    desc: "Descubra em 2 minutos se o seu caixa aguenta o próximo mês.",
+    formato: "Ferramenta",
+    disponivel: false,
+    href: "",
+  },
+  {
+    titulo: "Planilha de fluxo de caixa e DRE",
+    desc: "O modelo que a gente usa com cliente, pra você organizar sozinho.",
+    formato: "Planilha",
+    disponivel: false,
+    href: "",
+  },
+  {
+    titulo: "Planejamento financeiro anual",
+    desc: "Como estruturar o ano inteiro do seu caixa, passo a passo.",
+    formato: "Curso",
+    disponivel: false,
+    href: "",
+  },
+];
 ---
 
 <BaseLayout
-  titulo="Conteúdos — Financeiro de Dono"
+  titulo="Conteúdos | Financeiro de Dono"
   descricao="Materiais práticos sobre gestão financeira, fluxo de caixa e tomada de decisão para donos de empresas de serviço."
 >
-  <main class="mx-auto max-w-4xl px-5 py-12 md:py-16">
-    <header class="mb-12">
+  <main class="mx-auto max-w-5xl px-5 py-12 md:py-16">
+    <header class="mb-12 max-w-2xl">
       <a href="/" class="text-sm text-muted-foreground hover:text-foreground"
         >← Voltar para o site</a
       >
       <h1 class="mt-4 text-4xl font-bold text-foreground">Conteúdos</h1>
-      <p class="mt-3 max-w-2xl text-lg text-muted-foreground">
+      <p class="mt-3 text-lg text-muted-foreground">
         Como organizar o financeiro, ganhar previsibilidade e decidir sem
         quebrar o caixa. Sem enrolação.
       </p>
     </header>
 
+    <!-- Materiais de apoio -->
+    <section class="mb-16">
+      <h2 class="mb-6 text-xl font-bold text-foreground">Materiais de apoio</h2>
+      <div class="grid gap-5 sm:grid-cols-3">
+        {
+          materiais.map((m) =>
+            m.disponivel ? (
+              <a
+                href={m.href}
+                class="block rounded-2xl border border-border bg-card p-6 transition hover:border-primary/40 hover:shadow-sm"
+              >
+                <span class="text-xs font-semibold uppercase tracking-wide text-primary">
+                  {m.formato}
+                </span>
+                <h3 class="mt-2 font-bold text-foreground">{m.titulo}</h3>
+                <p class="mt-2 text-sm text-muted-foreground">{m.desc}</p>
+              </a>
+            ) : (
+              <div class="rounded-2xl border border-dashed border-border bg-card/50 p-6 opacity-70">
+                <div class="flex items-center justify-between">
+                  <span class="text-xs font-semibold uppercase tracking-wide text-primary">
+                    {m.formato}
+                  </span>
+                  <span class="text-xs font-medium text-muted-foreground">Em breve</span>
+                </div>
+                <h3 class="mt-2 font-bold text-foreground">{m.titulo}</h3>
+                <p class="mt-2 text-sm text-muted-foreground">{m.desc}</p>
+              </div>
+            )
+          )
+        }
+      </div>
+    </section>
+
+    <!-- Filtro por categoria -->
+    {
+      artigos.length > 0 && (
+        <div class="mb-8 flex flex-wrap gap-2" id="filtro-categorias">
+          {categorias.map((cat, i) => (
+            <button
+              type="button"
+              data-categoria={cat}
+              class:list={[
+                "rounded-full border px-4 py-1.5 text-sm font-medium transition",
+                i === 0
+                  ? "border-primary bg-primary text-primary-foreground"
+                  : "border-border bg-card text-muted-foreground hover:border-primary/40",
+              ]}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
+      )
+    }
+
+    <!-- Grade de artigos -->
     {
       artigos.length === 0 ? (
         <p class="text-muted-foreground">
           Nenhum conteúdo publicado ainda. Em breve.
         </p>
       ) : (
-        <ul class="space-y-4">
+        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3" id="grade-artigos">
           {artigos.map((artigo) => (
-            <li>
-              <a
-                href={`/conteudos/${artigo.slug}`}
-                class="block rounded-xl border border-border bg-card p-6 transition hover:border-primary/40 hover:shadow-sm"
-              >
+            <a
+              href={`/conteudos/${artigo.slug}`}
+              data-categoria={artigo.data.categoria}
+              class="flex flex-col overflow-hidden rounded-2xl border border-border bg-card transition hover:border-primary/40 hover:shadow-sm"
+            >
+              <div class="aspect-video w-full bg-dark/5">
+                {artigo.data.capa ? (
+                  <img
+                    src={artigo.data.capa}
+                    alt={artigo.data.titulo}
+                    class="h-full w-full object-cover"
+                    loading="lazy"
+                  />
+                ) : (
+                  <div class="flex h-full w-full items-center justify-center bg-dark">
+                    <span class="text-xs font-semibold uppercase tracking-wide text-primary-foreground/50">
+                      {artigo.data.categoria}
+                    </span>
+                  </div>
+                )}
+              </div>
+              <div class="flex flex-1 flex-col p-6">
                 <p class="text-xs font-medium uppercase tracking-wide text-primary">
                   {artigo.data.categoria}
                 </p>
-                <h2 class="mt-2 text-xl font-semibold text-foreground">
+                <h2 class="mt-2 text-lg font-semibold text-foreground">
                   {artigo.data.titulo}
                 </h2>
-                <p class="mt-2 text-muted-foreground">{artigo.data.descricao}</p>
-                <p class="mt-4 text-sm text-muted-foreground">
+                <p class="mt-2 text-sm text-muted-foreground flex-1">
+                  {artigo.data.descricao}
+                </p>
+                <p class="mt-4 text-xs text-muted-foreground">
                   {formatarData(artigo.data.data)}
                 </p>
-              </a>
-            </li>
+              </div>
+            </a>
           ))}
-        </ul>
+        </div>
       )
     }
   </main>
+
+  <script>
+    // Filtro de categoria, client-side, sem framework — só troca a classe do
+    // botão ativo e esconde/mostra os cards que não batem com a categoria.
+    const botoes = document.querySelectorAll("#filtro-categorias button");
+    const cards = document.querySelectorAll("#grade-artigos > a");
+
+    botoes.forEach((botao) => {
+      botao.addEventListener("click", () => {
+        const categoria = botao.getAttribute("data-categoria");
+
+        botoes.forEach((b) => {
+          b.classList.remove("border-primary", "bg-primary", "text-primary-foreground");
+          b.classList.add("border-border", "bg-card", "text-muted-foreground");
+        });
+        botao.classList.remove("border-border", "bg-card", "text-muted-foreground");
+        botao.classList.add("border-primary", "bg-primary", "text-primary-foreground");
+
+        cards.forEach((card) => {
+          const cardCategoria = card.getAttribute("data-categoria");
+          const mostrar = categoria === "Todos" || categoria === cardCategoria;
+          (card as HTMLElement).style.display = mostrar ? "" : "none";
+        });
+      });
+    });
+  </script>
 </BaseLayout>
