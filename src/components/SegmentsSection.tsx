@@ -1,12 +1,13 @@
 import ScrollReveal from "./ScrollReveal";
+import { HeartPulse, Ruler, Briefcase, Scale, Calculator, Building2 } from "lucide-react";
 
 const segments = [
-  { icon: "🏥", title: "Clínicas de saúde", desc: "Agenda cheia mas caixa apertado. O ciclo longo de repasse de convênios desequilibra o capital de giro e trava o crescimento.", tags: ["Convênios", "Capital de giro", "Expansão"] },
-  { icon: "📐", title: "Arquitetura e engenharia", desc: "Recebimento parcelado por etapa de projeto com despesas fixas que não esperam. Capital de giro zerado mesmo com contratos assinados.", tags: ["Ciclo longo", "Precificação", "Capital de giro"] },
-  { icon: "💼", title: "Consultorias", desc: "Receita variável que mascara meses ruins. Sem planejamento, é difícil saber se o negócio é lucrativo ou apenas movimentado.", tags: ["Receita variável", "Reserva", "Margem real"] },
-  { icon: "⚖️", title: "Escritórios jurídicos", desc: "Excelência no serviço ao cliente, mas o próprio financeiro fica para depois. Crescimento de equipe sem análise de impacto no caixa.", tags: ["Inadimplência", "Pró-labore", "Crescimento"] },
-  { icon: "📊", title: "Escritórios contábeis", desc: "Cuida das finanças dos clientes mas não das próprias. A operação cresce e o controle interno fica para depois.", tags: ["Controle interno", "Margem", "Escala"] },
-  { icon: "🏢", title: "Outros serviços", desc: "Agências, escolas, academias, imobiliárias e outros prestadores de serviço que cresceram mais rápido do que o controle financeiro.", tags: ["Serviços em geral", "PME"] },
+  { Icon: HeartPulse, title: "Clínicas de saúde", desc: "Agenda cheia mas caixa apertado. O ciclo longo de repasse de convênios desequilibra o capital de giro e trava o crescimento.", tags: ["Convênios", "Capital de giro", "Expansão"] },
+  { Icon: Ruler, title: "Arquitetura e engenharia", desc: "Recebimento parcelado por etapa de projeto com despesas fixas que não esperam. Capital de giro zerado mesmo com contratos assinados.", tags: ["Ciclo longo", "Precificação", "Capital de giro"] },
+  { Icon: Briefcase, title: "Consultorias", desc: "Receita variável que mascara meses ruins. Sem planejamento, é difícil saber se o negócio é lucrativo ou apenas movimentado.", tags: ["Receita variável", "Reserva", "Margem real"] },
+  { Icon: Scale, title: "Escritórios jurídicos", desc: "Excelência no serviço ao cliente, mas o próprio financeiro fica para depois. Crescimento de equipe sem análise de impacto no caixa.", tags: ["Inadimplência", "Pró-labore", "Crescimento"] },
+  { Icon: Calculator, title: "Escritórios contábeis", desc: "Cuida das finanças dos clientes mas não das próprias. A operação cresce e o controle interno fica para depois.", tags: ["Controle interno", "Margem", "Escala"] },
+  { Icon: Building2, title: "Outros serviços", desc: "Agências, escolas, academias, imobiliárias e outros prestadores de serviço que cresceram mais rápido do que o controle financeiro.", tags: ["Serviços em geral", "PME"] },
 ];
 
 const SegmentsSection = () => {
@@ -28,7 +29,9 @@ const SegmentsSection = () => {
           {segments.map((s, i) => (
             <ScrollReveal key={i} delay={i * 80}>
               <div className="bg-card rounded-2xl p-7 border border-border shadow-card-hover h-full hover:border-primary/30 transition-colors">
-                <div className="text-3xl mb-4">{s.icon}</div>
+                <div className="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                  <s.Icon className="text-primary" size={22} strokeWidth={2} />
+                </div>
                 <h3 className="font-bold text-foreground text-lg mb-2">{s.title}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed mb-4">{s.desc}</p>
                 <div className="flex flex-wrap gap-2">
