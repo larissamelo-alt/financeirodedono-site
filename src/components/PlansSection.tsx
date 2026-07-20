@@ -1,66 +1,88 @@
+import { Check } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
-import { Wallet, AlertTriangle, Hourglass } from "lucide-react";
 
-const problems = [
+const WHATSAPP_LINK = "https://wa.me/5548996645113?text=Quero%20meu%20diagnóstico%20gratuito";
+
+const plans = [
   {
-    Icon: Wallet,
-    title: "Fatura, mas o caixa não fecha",
-    desc: "No fim do mês o dinheiro some e ninguém sabe explicar para onde foi. Isso não é falta de faturamento. É falta de decisão com dado.",
+    name: "Controle de Dono",
+    desc: "Para quem precisa de organização financeira e visibilidade mensal do negócio.",
+    features: ["Conciliação bancária", "DRE gerencial", "Fluxo de caixa realizado", "Indicadores financeiros", "Reunião mensal 30 min", "Atendimento via WhatsApp"],
+    highlighted: false,
   },
   {
-    Icon: AlertTriangle,
-    title: "Decide no impulso, sem dados",
-    desc: "Contrata, investe ou retira sem saber se o caixa aguenta. A decisão parece certa até o extrato provar o contrário.",
+    name: "Estratégico de Dono",
+    desc: "Para quem quer fluxo de caixa projetado e apoio contínuo nas decisões do negócio.",
+    features: ["Tudo do Controle de Dono", "Fluxo de caixa projetado", "Contas a pagar/receber", "Planejamento financeiro", "Reunião mensal 60 min", "Contato direto com Jonny"],
+    highlighted: true,
   },
   {
-    Icon: Hourglass,
-    title: "O financeiro consome o seu tempo",
-    desc: "Você é o especialista do seu negócio. Não devia ser também quem decide sozinho sobre o caixa, sem apoio.",
+    name: "CFO de Dono",
+    desc: "Para quem precisa de um CFO dedicado com visão estratégica de médio e longo prazo.",
+    features: ["Tudo do Estratégico de Dono", "Planejamento de longo prazo", "Análise de riscos e cenários", "Estruturação do time financeiro", "Reunião semanal 60 min", "Acesso direto ao Jonny"],
+    highlighted: false,
   },
 ];
 
-const ProblemSection = () => {
+const PlansSection = () => {
   return (
-    <section id="problema" className="py-20 lg:py-28 bg-section-alt">
+    <section id="planos" className="py-20 lg:py-28 bg-background">
       <div className="container mx-auto px-4 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-6 mb-14">
-          <ScrollReveal>
-            <h2 className="text-3xl lg:text-4xl font-extrabold text-foreground">
-              Toda semana você decide algo sobre o caixa. A pergunta é: com que base?
+        <ScrollReveal>
+          <div className="text-center max-w-2xl mx-auto mb-14">
+            <h2 className="text-3xl lg:text-4xl font-extrabold text-foreground mb-4">
+              Escolha o nível de apoio certo para o seu momento
             </h2>
-          </ScrollReveal>
-          <ScrollReveal delay={100}>
-            <p className="text-muted-foreground leading-relaxed lg:pt-2">
-              A maioria dos donos de empresa de serviço toma essas decisões no impulso. Só descobre que errou quando o caixa já travou.
+            <p className="text-muted-foreground">
+              O escopo e o investimento são definidos com você, depois do diagnóstico. Cada negócio de serviço tem uma estrutura financeira diferente, e o apoio certo muda junto.
             </p>
-          </ScrollReveal>
-        </div>
+          </div>
+        </ScrollReveal>
 
-        <div className="grid md:grid-cols-3 gap-6 mb-12">
-          {problems.map((p, i) => (
-            <ScrollReveal key={i} delay={i * 100}>
-              <div className="bg-card rounded-2xl p-8 border border-border shadow-card-hover h-full">
-                <div className="w-11 h-11 rounded-xl bg-accent/15 flex items-center justify-center mb-5">
-                  <p.Icon className="text-accent" size={22} strokeWidth={2} />
-                </div>
-                <h3 className="text-lg font-bold text-foreground mb-3">{p.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{p.desc}</p>
+        <div className="grid md:grid-cols-3 gap-6 items-start">
+          {plans.map((plan, i) => (
+            <ScrollReveal key={i} delay={i * 120}>
+              <div
+                className={`rounded-2xl p-8 border h-full flex flex-col ${
+                  plan.highlighted
+                    ? "bg-dark text-primary-foreground border-accent/30 scale-[1.02] shadow-xl relative"
+                    : "bg-card text-foreground border-border shadow-card-hover"
+                }`}
+              >
+                <h3 className="text-xl font-extrabold mb-2">{plan.name}</h3>
+                <p className={`text-sm mb-6 leading-relaxed ${plan.highlighted ? "text-primary-foreground/70" : "text-muted-foreground"}`}>
+                  {plan.desc}
+                </p>
+
+                <ul className="space-y-3 mb-8 flex-1">
+                  {plan.features.map((f, fi) => (
+                    <li key={fi} className="flex items-start gap-2.5 text-sm">
+                      <Check size={16} className={`mt-0.5 flex-shrink-0 ${plan.highlighted ? "text-accent" : "text-primary"}`} />
+                      <span className={plan.highlighted ? "text-primary-foreground/80" : "text-muted-foreground"}>{f}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                
+                  href={WHATSAPP_LINK}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`block text-center py-3 rounded-full font-bold text-sm transition-all ${
+                    plan.highlighted
+                      ? "bg-accent text-accent-foreground hover:brightness-110 shadow-accent-hover"
+                      : "border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+                  }`}
+                >
+                  Quero saber se faz sentido pra mim
+                </a>
               </div>
             </ScrollReveal>
           ))}
         </div>
 
-        <ScrollReveal delay={300}>
-          <div className="bg-dark rounded-2xl p-8 flex gap-5">
-            <div className="w-1 min-h-full bg-accent rounded-full flex-shrink-0" />
-            <p className="text-primary-foreground/90 leading-relaxed">
-              <strong className="text-primary-foreground">O risco mais comum que vemos:</strong> empresa faturando, caixa a poucos dias de travar, e o sócio decidindo sem saber disso. Em 90 dias, isso muda.
-            </p>
-          </div>
+        <ScrollReveal delay={400}>
+          <p className="text-center text-sm text-muted-foreground mt-10">
+            Nenhum desses nomes é um pacote fechado. É o ponto de partida da conversa no diagnóstico.
+          </p>
         </ScrollReveal>
       </div>
-    </section>
-  );
-};
-
-export default ProblemSection;
