@@ -3,7 +3,8 @@ import logoWhite from "@/assets/logo-white.png?url";
 const navLinks = [
   { label: "O problema", href: "#problema" },
   { label: "Como funciona", href: "#como-funciona" },
-  { label: "Planos", href: "#planos" },
+  { label: "Nível de apoio", href: "#planos" },
+  { label: "Conteúdo", href: "/conteudos" },
   { label: "FAQ", href: "#faq" },
   { label: "Instagram", href: "https://instagram.com/jonny.elias" },
 ];
@@ -18,7 +19,7 @@ const Footer = () => {
               <img src={logoWhite} alt="Financeiro de Dono" className="h-8" />
             </div>
             <p className="text-sm text-primary-foreground/50">
-              Clareza financeira para decidir sem quebrar.
+              Clareza pra decidir. Não pra sobreviver.
             </p>
           </div>
 
