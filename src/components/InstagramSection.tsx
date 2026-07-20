@@ -14,8 +14,8 @@ const InstagramSection = () => {
     <section className="py-20 lg:py-28 bg-background">
       <div className="container mx-auto px-4 lg:px-8 text-center">
         <ScrollReveal>
-          <h2 className="text-3xl lg:text-4xl font-extrabold text-foreground mb-2">
-            Financeiro aplicado na prática
+          <h2 className="text-2xl lg:text-3xl font-extrabold text-foreground mb-2">
+            Também estamos no Instagram
           </h2>
           <a
             href={INSTAGRAM_URL}
