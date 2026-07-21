@@ -1,4 +1,4 @@
-import { Check, TrendingUp, BarChart3, PieChart, Calculator, FileText, Users, HeadphonesIcon, LineChart } from "lucide-react";
+import { Check, TrendingUp, BarChart3, Calculator, FileText, HeadphonesIcon, Receipt, Handshake, Percent } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
 
 const steps = [
@@ -12,10 +12,10 @@ const services = [
   { label: "Conciliação bancária", icon: Calculator },
   { label: "DRE gerencial mensal", icon: FileText },
   { label: "Fluxo de caixa realizado e projetado", icon: TrendingUp },
-  { label: "Indicadores financeiros (KPIs)", icon: BarChart3 },
-  { label: "Análises financeiras avançadas", icon: LineChart },
-  { label: "Planejamento e projeções", icon: PieChart },
-  { label: "Reuniões de acompanhamento", icon: Users },
+  { label: "Indicadores e análises financeiras", icon: BarChart3 },
+  { label: "Boletos e notas fiscais", icon: Receipt },
+  { label: "Negociação com bancos e fornecedores", icon: Handshake },
+  { label: "Taxas e crédito mais competitivos", icon: Percent },
   { label: "Apoio contínuo nas decisões", icon: HeadphonesIcon },
 ];
 
