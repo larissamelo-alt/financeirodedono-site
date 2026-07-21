@@ -5,7 +5,7 @@ import logoWhite from "@/assets/logo-white.png?url";
 const WHATSAPP_LINK = "https://wa.me/5548996645113?text=Quero%20meu%20diagnóstico%20gratuito";
 
 const navLinks = [
-  { label: "O problema", href: "#problema" },
+  { label: "Início", href: "#inicio" },
   { label: "Como funciona", href: "#como-funciona" },
   { label: "Quem somos", href: "#quem-somos" },
   { label: "Segmentos", href: "#segmentos" },
@@ -53,7 +53,7 @@ const Navbar = () => {
             rel="noopener noreferrer"
             className="bg-accent text-accent-foreground px-6 py-2.5 rounded-full text-sm font-bold hover:brightness-110 shadow-accent-hover transition-all"
           >
-            Diagnóstico gratuito
+            Quero clareza
           </a>
         </div>
 
@@ -85,7 +85,7 @@ const Navbar = () => {
             rel="noopener noreferrer"
             className="inline-block mt-3 bg-accent text-accent-foreground px-6 py-2.5 rounded-full text-sm font-bold"
           >
-            Diagnóstico gratuito
+            Quero clareza
           </a>
         </div>
       )}
