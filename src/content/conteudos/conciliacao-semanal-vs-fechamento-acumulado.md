@@ -6,7 +6,7 @@ autor: "Jonny Elias"
 categoria: "Rotina Financeira"
 tags: ["conciliação", "fluxo de caixa", "fechamento de mês", "DRE"]
 rascunho: false
-capa: "conciliacao-semanal-vs-fechamento-acumulado.jgp"
+capa: "/capas/conciliacao-semanal-vs-fechamento-acumulado.jgp"
 ---
 
 Faltam três dias para o mês fechar. Você sabe como ele vai terminar? Não o faturamento — o resultado real, o que vai sobrar depois que tudo for pago.
