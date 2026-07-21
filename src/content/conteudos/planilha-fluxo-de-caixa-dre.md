@@ -6,7 +6,7 @@ autor: "Jonny Elias"
 categoria: "Gestão Financeira"
 tags: ["DRE", "fluxo de caixa", "planilha", "material de apoio"]
 rascunho: false
-capa: "planilha-fluxo-de-caixa-dre.jpg"
+capa: "/capas/planilha-fluxo-de-caixa-dre.jpg"
 ---
 
 Duas planilhas em uma: DRE Gerencial (Demonstrativo de Resultado) e Fluxo de Caixa Livre. A primeira mostra se a operação dá lucro. A segunda mostra se esse lucro virou dinheiro de verdade no caixa. São perguntas diferentes, e a maioria dos donos de empresa de serviço só responde uma delas, quando responde.
