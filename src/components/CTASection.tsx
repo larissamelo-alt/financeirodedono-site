@@ -10,7 +10,7 @@ const CTASection = () => {
       <div className="container mx-auto px-4 lg:px-8 relative z-10 text-center">
         <ScrollReveal>
           <h2 className="text-3xl lg:text-5xl font-extrabold text-primary-foreground mb-5 max-w-3xl mx-auto">
-            Pronto para ter clareza sobre o financeiro do seu negócio?
+            Pronto pra decidir com clareza, não no escuro?
           </h2>
         </ScrollReveal>
         <ScrollReveal delay={100}>
