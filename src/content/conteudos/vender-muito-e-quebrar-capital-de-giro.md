@@ -6,6 +6,7 @@ autor: "Jonny Elias"
 categoria: "Capital de Giro"
 tags: ["capital de giro", "fluxo de caixa", "pequenas empresas", "gestão financeira"]
 rascunho: false
+capa: "vender-muito-e-quebrar-capital-de-giro.jpg"
 ---
 
 Quando alguém abre um negócio, todo mundo fala sobre vender. Vender mais, vender melhor, bater meta. Ninguém avisa que dá para vender muito e quebrar do mesmo jeito.
