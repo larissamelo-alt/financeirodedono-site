@@ -8,6 +8,7 @@ import HeroSection from "@/components/HeroSection";
 import DonoMethodSection from "@/components/DonoMethodSection";
 import ProblemSection from "@/components/ProblemSection";
 import HowItWorksSection from "@/components/HowItWorksSection";
+import TransformationSection from "@/components/TransformationSection";
 import AboutSection from "@/components/AboutSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import SegmentsSection from "@/components/SegmentsSection";
@@ -21,7 +22,9 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 
 // Os 3 conteúdos mais recentes, pra prévia na home. Mesma fonte de dados da
 // página /conteudos — se cadastrar um artigo novo, ele aparece aqui sozinho.
-const artigosRecentes = (await getCollection("conteudos", ({ data }) => !data.rascunho))
+// Materiais de apoio (calculadora, planilha) ficam de fora daqui: eles já
+// têm destaque próprio na página /conteudos, não precisam duplicar aqui.
+const artigosRecentes = (await getCollection("conteudos", ({ data }) => !data.rascunho && !data.tags.includes("material de apoio")))
   .sort((a, b) => b.data.data.valueOf() - a.data.data.valueOf())
   .slice(0, 3)
   .map((artigo) => ({
@@ -53,6 +56,7 @@ const artigosRecentes = (await getCollection("conteudos", ({ data }) => !data.ra
   <DonoMethodSection client:visible />
   <ProblemSection client:visible />
   <HowItWorksSection client:visible />
+  <TransformationSection client:visible />
   <AboutSection client:visible />
   <TestimonialsSection client:visible />
   <SegmentsSection client:visible />
