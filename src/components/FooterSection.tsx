@@ -1,7 +1,7 @@
 import logoWhite from "@/assets/logo-white.png?url";
 
 const navLinks = [
-  { label: "O problema", href: "#problema" },
+  { label: "Início", href: "#inicio" },
   { label: "Como funciona", href: "#como-funciona" },
   { label: "Nível de apoio", href: "#planos" },
   { label: "Conteúdo", href: "/conteudos" },
