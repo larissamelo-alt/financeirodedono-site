@@ -6,7 +6,7 @@ autor: "Jonny Elias"
 categoria: "Bastidores"
 tags: ["história", "empreendedorismo", "caixa", "resiliência"]
 rascunho: false
-capa: "como-nasceu-o-financeiro-de-dono.jpg"
+capa: "/capas/como-nasceu-o-financeiro-de-dono.jpg"
 ---
 
 Antes do Financeiro de Dono existir, o Jonny passou oito anos à frente de uma promotora de crédito. R$ 200 milhões vendidos, perto de 30 funcionários. E, ao longo desse período, ele recomeçou cinco vezes. Não por erro de gestão — por não controlar as regras do próprio jogo.
