@@ -62,7 +62,7 @@ const PlansSection = () => {
                     </li>
                   ))}
                 </ul>
-
+<a
                 
                   href={WHATSAPP_LINK}
                   target="_blank"
