@@ -2,8 +2,9 @@
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 
-// Pega todos os artigos, esconde rascunhos, ordena do mais novo pro mais antigo.
-const artigos = (await getCollection("conteudos", ({ data }) => !data.rascunho))
+// Pega todos os artigos, esconde rascunhos e materiais de apoio (esses têm
+// destaque próprio acima), ordena do mais novo pro mais antigo.
+const artigos = (await getCollection("conteudos", ({ data }) => !data.rascunho && !data.tags.includes("material de apoio")))
   .sort((a, b) => b.data.data.valueOf() - a.data.data.valueOf());
 
 const categorias = ["Todos", ...Array.from(new Set(artigos.map((a) => a.data.categoria)))];
@@ -25,15 +26,15 @@ const materiais = [
     titulo: "Calculadora de capital de giro",
     desc: "Descubra em 2 minutos se o seu caixa aguenta o próximo mês.",
     formato: "Ferramenta",
-    disponivel: false,
-    href: "",
+    disponivel: true,
+    href: "/conteudos/capital-de-giro-o-que-e",
   },
   {
     titulo: "Planilha de fluxo de caixa e DRE",
     desc: "O modelo que a gente usa com cliente, pra você organizar sozinho.",
     formato: "Planilha",
-    disponivel: false,
-    href: "",
+    disponivel: true,
+    href: "/conteudos/planilha-fluxo-de-caixa-dre",
   },
   {
     titulo: "Planejamento financeiro anual",
@@ -84,7 +85,7 @@ const materiais = [
                   <span class="text-xs font-semibold uppercase tracking-wide text-primary">
                     {m.formato}
                   </span>
-                  <span class="text-xs font-medium text-muted-foreground">Em breve</span>
+                  <span class="text-xs font-medium text-muted-foreground">Em breve no YouTube</span>
                 </div>
                 <h3 class="mt-2 font-bold text-foreground">{m.titulo}</h3>
                 <p class="mt-2 text-sm text-muted-foreground">{m.desc}</p>
