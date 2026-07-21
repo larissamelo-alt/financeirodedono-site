@@ -26,10 +26,10 @@ const CTASection = () => {
             className="inline-flex items-center gap-2.5 bg-accent text-accent-foreground px-10 py-4 rounded-full font-bold text-base hover:brightness-110 shadow-accent-hover transition-all"
           >
             <MessageCircle size={20} />
-            Quero meu diagnóstico gratuito
+            Quero clareza sobre o meu caixa
           </a>
           <p className="text-primary-foreground/50 text-sm mt-5">
-            Gratuito · 30 minutos · Sem compromisso
+            Diagnóstico gratuito · 30 minutos · Sem compromisso
           </p>
         </ScrollReveal>
       </div>
