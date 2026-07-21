@@ -33,7 +33,7 @@ const AboutSection = () => {
           <div>
             <ScrollReveal>
               <span className="inline-block bg-primary-foreground/10 text-primary-foreground/70 text-xs font-semibold px-4 py-1.5 rounded-full border border-primary-foreground/10 mb-4">
-                Quem está por trás
+                Quem lidera
               </span>
               <h2 className="text-3xl lg:text-4xl font-extrabold text-primary-foreground mb-3">
                 Experiência real. Não teoria.
