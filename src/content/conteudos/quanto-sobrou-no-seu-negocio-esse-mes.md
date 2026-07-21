@@ -6,7 +6,7 @@ autor: "Jonny Elias"
 categoria: "Gestão Financeira"
 tags: ["produtividade", "clareza financeira", "gestão de tempo", "tomada de decisão"]
 rascunho: false
-capa: "quanto-sobrou-no-seu-negocio-esse-mes.jpg"
+capa: "/capas/quanto-sobrou-no-seu-negocio-esse-mes.jpg"
 ---
 
 Toda semana a mesma frase: "estou corrido, não tenho tempo". A gente parou de responder com dica de produtividade faz tempo. Porque, na maioria dos casos que acompanhamos, o problema não é agenda cheia. É que o dono está tão dentro da operação que perdeu a capacidade de enxergar o próprio negócio. Quando tudo vira urgência, a urgência constante passa a ter um custo que quase ninguém calcula.
