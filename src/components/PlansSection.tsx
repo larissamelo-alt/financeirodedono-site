@@ -86,3 +86,8 @@ const PlansSection = () => {
           </p>
         </ScrollReveal>
       </div>
+    </section>
+  );
+};
+
+export default PlansSection;
