@@ -6,6 +6,7 @@ autor: "Jonny Elias"
 categoria: "Fluxo de Caixa"
 tags: ["fluxo de caixa", "clínicas", "gestão financeira", "capital de giro"]
 rascunho: false
+capa: "fluxo-de-caixa-para-clinicas.jpg"
 ---
 
 Todo mês é a mesma cena. A conta da clínica tem dinheiro, o movimento está bom, e mesmo assim, lá pelo dia 20, o caixa aperta. O dono olha o extrato, não entende, e conclui que "faturou bem, mas sumiu". Não sumiu. O problema quase nunca é faturamento. É enxergar o caixa pelo saldo do banco.
