@@ -5,7 +5,7 @@ const WHATSAPP_LINK = "https://wa.me/5548996645113?text=Quero%20meu%20diagnósti
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen bg-primary overflow-hidden hero-grid">
+    <section id="inicio" className="relative min-h-screen bg-primary overflow-hidden hero-grid">
       {/* Radial gradient orange */}
       <div className="absolute top-0 right-0 w-[60%] h-full bg-[radial-gradient(ellipse_at_80%_50%,hsl(37_91%_55%/0.15),transparent_70%)]" />
 
@@ -22,14 +22,16 @@ const HeroSection = () => {
             <ScrollReveal delay={100}>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-primary-foreground leading-[1.1] mb-6">
                 Clareza <span className="text-accent">pra decidir.</span>
+                <br />
+                Não pra <span className="text-accent">sobreviver.</span>
               </h1>
             </ScrollReveal>
 
             <ScrollReveal delay={200}>
-              <p className="text-lg text-primary-foreground/70 max-w-lg mb-2 leading-relaxed">
-                Não pra sobreviver. Você já fatura. Só falta decidir com dado, não com medo.
+              <p className="text-xl text-primary-foreground/85 max-w-lg mb-4 font-medium leading-snug">
+                Você já fatura. Só falta decidir com dado, não com medo.
               </p>
-              <p className="text-base text-primary-foreground/60 max-w-lg mb-8 leading-relaxed">
+              <p className="text-base text-primary-foreground/55 max-w-lg mb-8 leading-relaxed">
                 Cuidamos da rotina financeira da sua empresa para você ver o caixa com clareza e decidir sem depender de achismo.
               </p>
             </ScrollReveal>
@@ -43,7 +45,7 @@ const HeroSection = () => {
                   className="inline-flex items-center gap-2 bg-accent text-accent-foreground px-7 py-3.5 rounded-full font-bold text-sm hover:brightness-110 shadow-accent-hover transition-all"
                 >
                   <MessageCircle size={18} />
-                  Quero meu diagnóstico gratuito
+                  Quero clareza sobre o meu caixa
                 </a>
                 <a
                   href="#como-funciona"
