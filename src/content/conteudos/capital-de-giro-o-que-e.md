@@ -6,6 +6,7 @@ autor: "Jonny Elias"
 categoria: "Capital de Giro"
 tags: ["capital de giro", "fluxo de caixa", "calculadora", "material de apoio"]
 rascunho: false
+capa: "/capas/capital-de-giro-o-que-e.jpg"
 ---
 
 Capital de giro é o dinheiro que sua empresa precisa pra continuar funcionando entre o momento em que uma despesa sai do caixa e o momento em que a receita correspondente entra. Não é lucro. Não é faturamento. É o fôlego financeiro que sustenta a operação no dia a dia.
