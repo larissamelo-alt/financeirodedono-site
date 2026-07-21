@@ -39,13 +39,13 @@ const AboutSection = () => {
                 Experiência real. Não teoria.
               </h2>
               <p className="text-accent font-semibold mb-6">
-                De cuidar do dinheiro de uma pessoa a construir o financeiro de uma empresa. Agora, da sua.
+                De cuidar do dinheiro de uma pessoa a construir o financeiro de uma empresa. E agora, da sua.
               </p>
             </ScrollReveal>
 
             <ScrollReveal delay={100}>
               <p className="text-primary-foreground/70 leading-relaxed mb-8">
-                Já organizei o dinheiro de atletas e médicos. Controlei R$ 1,5 bilhão por ano numa indústria. Construí dois negócios de crédito do zero: um vendido por R$ 150 milhões, outro automatizado, operando hoje com 5 pessoas. Hoje aplico essa experiência inteira dentro de pequenas e médias empresas.
+                Já organizei o dinheiro de atletas e médicos. Controlei R$ 1,5 bilhão por ano num comércio. Construí dois negócios de crédito do zero: com mais R$ 150 milhões em vendas. Hoje aplico essa experiência inteira dentro de pequenas e médias empresas.
               </p>
             </ScrollReveal>
 
