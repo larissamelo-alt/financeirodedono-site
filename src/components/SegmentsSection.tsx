@@ -1,12 +1,12 @@
 import ScrollReveal from "./ScrollReveal";
-import { HeartPulse, Ruler, Briefcase, Scale, Calculator, Building2 } from "lucide-react";
+import { HeartPulse, Ruler, Briefcase, Scale, Coffee, Building2 } from "lucide-react";
 
 const segments = [
   { Icon: HeartPulse, title: "Clínicas de saúde", desc: "Agenda cheia mas caixa apertado. O ciclo longo de repasse de convênios desequilibra o capital de giro e trava o crescimento.", tags: ["Convênios", "Capital de giro", "Expansão"] },
   { Icon: Ruler, title: "Arquitetura e engenharia", desc: "Recebimento parcelado por etapa de projeto com despesas fixas que não esperam. Capital de giro zerado mesmo com contratos assinados.", tags: ["Ciclo longo", "Precificação", "Capital de giro"] },
   { Icon: Briefcase, title: "Consultorias", desc: "Receita variável que mascara meses ruins. Sem planejamento, é difícil saber se o negócio é lucrativo ou apenas movimentado.", tags: ["Receita variável", "Reserva", "Margem real"] },
   { Icon: Scale, title: "Escritórios jurídicos", desc: "Excelência no serviço ao cliente, mas o próprio financeiro fica para depois. Crescimento de equipe sem análise de impacto no caixa.", tags: ["Inadimplência", "Pró-labore", "Crescimento"] },
-  { Icon: Calculator, title: "Escritórios contábeis", desc: "Cuida das finanças dos clientes mas não das próprias. A operação cresce e o controle interno fica para depois.", tags: ["Controle interno", "Margem", "Escala"] },
+  { Icon: Coffee, title: "Cafeterias e foodservice", desc: "Margem apertada, insumo perecível e fluxo de caixa que muda todo dia. Sem controle diário, o mês fecha no vermelho sem ninguém perceber onde vazou.", tags: ["Margem", "Insumo", "Fluxo diário"] },
   { Icon: Building2, title: "Outros serviços", desc: "Agências, escolas, academias, imobiliárias e outros prestadores de serviço que cresceram mais rápido do que o controle financeiro.", tags: ["Serviços em geral", "PME"] },
 ];
 
