@@ -6,7 +6,7 @@ autor: "Jonny Elias"
 categoria: "Gestão Financeira"
 tags: ["contador", "gestão financeira", "fluxo de caixa", "pequenas empresas"]
 rascunho: false
-capa: "contador-nao-e-gestao-financeira.jpg"
+capa: "/capas/contador-nao-e-gestao-financeira.jpg"
 ---
 
 Toda semana a gente ouve a mesma frase de dono de empresa de serviço: "mas isso o meu contador já resolve". Resolve uma parte. Não a parte que decide se o seu caixa atravessa o mês.
