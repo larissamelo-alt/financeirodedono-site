@@ -15,7 +15,7 @@ const HeroSection = () => {
           <div>
             <ScrollReveal>
               <span className="inline-block bg-primary-foreground/10 text-primary-foreground/90 text-xs font-semibold px-4 py-1.5 rounded-full border border-primary-foreground/15 mb-6">
-                Terceirização financeira (BPO)
+                BPO Financeiro & Inteligência Financeira Aplicada
               </span>
             </ScrollReveal>
 
