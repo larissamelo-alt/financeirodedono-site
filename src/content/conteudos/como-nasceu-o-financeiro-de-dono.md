@@ -1,6 +1,6 @@
 ---
 titulo: "5 vezes o mercado virou. Na 5ª, nasceu o Financeiro de Dono."
-descricao: "A história de quem geriu R$ 1,5 bilhão, recomeçou cinco vezes por mudança de regra, e descobriu que o que salva uma empresa na crise é sempre a mesma coisa: caixa."
+descricao: "A história de quem geriu R$ 1,5 bilhão, recomeçou cinco vezes por mudança de regra e descobriu que o que salva uma empresa na crise é sempre o caixa."
 data: 2026-05-27
 autor: "Jonny Elias"
 categoria: "Bastidores"
@@ -25,6 +25,6 @@ Foi assim que nasceu o Financeiro de Dono.
 
 ## De R$ 1,5 bilhão para o dono que fatura R$ 50 mil
 
-Antes, o Jonny geriu R$ 1,5 bilhão em uma grande companhia. Hoje, o trabalho é com PMEs de serviço que faturam de R$ 50 mil a R$ 250 mil por mês. A pergunta natural é por quê — e a resposta é que essa dor é a mesma que ele viveu na pele. O sufoco de caixa curto. A decisão tomada no achismo. A insegurança de não saber se dá para contratar.
+Antes, o Jonny geriu R$ 1,5 bilhão em uma grande companhia. Hoje, o trabalho é com PMEs que faturam de R$ 50 mil a R$ 250 mil por mês. A pergunta natural é por quê — e a resposta é que essa dor é a mesma que ele viveu na pele. O sufoco de caixa curto. A decisão tomada no achismo. A insegurança de não saber se dá para contratar.
 
 E também a outra ponta: o que de fato funciona quando o mercado vira. Caixa, estratégia e controle. Não é teoria de livro — é o que manteve uma empresa viva cinco vezes seguidas. É esse método que o Financeiro de Dono leva para o dono que ainda decide no escuro.
