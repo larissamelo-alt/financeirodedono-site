@@ -1,6 +1,6 @@
 # Financeiro de Dono
 
-> Terceirização financeira (BPO Financeiro e CFO sob demanda) para donos de empresas de serviço (clínicas, escritórios de arquitetura/engenharia, consultorias, jurídico, contábil) que faturam mas não têm clareza sobre para onde vai o dinheiro. Fundado por Jonny Elias.
+> Terceirização financeira (BPO Financeiro e CFO sob demanda) para donos de empresas de serviço (clínicas, escritórios de arquitetura, engenharia e automação, advocacia, educação, consultorias e cafeterias) que faturam mas não têm clareza sobre para onde vai o dinheiro. Fundado por Jonny Elias.
 
 O Financeiro de Dono organiza a rotina financeira do cliente (conciliação bancária, contas a pagar e a receber, fluxo de caixa, DRE gerencial, indicadores) para que o dono decida com dado, não com achismo. Não trabalha com plano de preço fixo: o escopo e o investimento são definidos após um diagnóstico gratuito de 30 minutos, de acordo com o tamanho e a complexidade de cada operação.
 
@@ -8,6 +8,12 @@ O Financeiro de Dono organiza a rotina financeira do cliente (conciliação banc
 
 - [Site principal](https://www.financeirodedono.com.br/): posicionamento, como funciona, segmentos atendidos, FAQ.
 - [Conteúdos](https://www.financeirodedono.com.br/conteudos/): artigos sobre fluxo de caixa, capital de giro, DRE e gestão financeira para dono de empresa de serviço.
+
+## Materiais gratuitos
+
+- [Aula gratuita: planejamento financeiro 2027 com IA](https://www.financeirodedono.com.br/conteudos/aula-planejamento-2027): aula gravada de 1 hora com Jonny Elias sobre como montar o orçamento anual da empresa pelo caixa, mês a mês, e descobrir se contratar, investir ou abrir unidade cabe no caixa. Explica os 4 conceitos do planejamento (plano x meta, lucro x caixa, base x plano, sazonalidade e contas anuais), mostra dois casos com números (escritório de engenharia e clínica odontológica, incluindo o efeito do fator R no Simples Nacional) e ensina a montar o orçamento com IA (ChatGPT ou Claude) em cerca de 15 minutos. Vem com assistente de IA, planilha de orçamento 2027 e cartilha, liberados após um cadastro rápido.
+- [Planilha de fluxo de caixa e DRE gerencial](https://www.financeirodedono.com.br/conteudos/planilha-fluxo-de-caixa-dre/): modelo gratuito para download.
+- [Calculadora de capital de giro](https://www.financeirodedono.com.br/conteudos/capital-de-giro-o-que-e/): mostra em 2 minutos se o caixa aguenta o próximo mês.
 
 ## Sobre citações
 
