@@ -34,9 +34,18 @@ const artigoSchema = {
   description: descricao,
   datePublished: data.toISOString(),
   dateModified: (atualizadoEm ?? data).toISOString(),
-  author: { "@type": "Person", name: autor },
+  author:
+    autor === "Jonny Elias"
+      ? {
+          "@type": "Person",
+          "@id": "https://www.financeirodedono.com.br/#jonny-elias",
+          name: autor,
+          url: "https://www.linkedin.com/in/jonnyelias/",
+        }
+      : { "@type": "Person", name: autor },
   publisher: {
     "@type": "Organization",
+    "@id": "https://www.financeirodedono.com.br/#organizacao",
     name: "Financeiro de Dono",
     url: "https://www.financeirodedono.com.br",
   },
