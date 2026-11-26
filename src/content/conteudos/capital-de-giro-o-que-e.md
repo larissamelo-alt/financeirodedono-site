@@ -11,7 +11,7 @@ capa: "/capas/capital-de-giro-o-que-e.jpg"
 
 Capital de giro é o dinheiro que sua empresa precisa pra continuar funcionando entre o momento em que uma despesa sai do caixa e o momento em que a receita correspondente entra. Não é lucro. Não é faturamento. É o fôlego financeiro que sustenta a operação no dia a dia.
 
-Uma empresa pode fechar o mês no lucro e ainda assim não ter capital de giro suficiente pra pagar o fornecedor da próxima semana. Isso acontece o tempo todo em empresas de serviço, principalmente quando o prazo de recebimento é mais longo que o prazo de pagamento.
+Uma empresa pode fechar o mês no lucro e ainda assim não ter capital de giro suficiente pra pagar o fornecedor da próxima semana. Isso acontece o tempo todo em clínicas, escritórios e consultorias, principalmente quando o prazo de recebimento é mais longo que o prazo de pagamento.
 
 ## Como calcular
 
@@ -19,7 +19,7 @@ A fórmula é simples:
 
 **Capital de giro = Ativo Circulante − Passivo Circulante**
 
-Na prática, pra uma empresa de serviço:
+Na prática, pra uma clínica, um escritório ou uma consultoria:
 
 - **Ativo circulante**: caixa, contas a receber de curto prazo, aplicações de liquidez imediata
 - **Passivo circulante**: fornecedores, salários, impostos e outras contas a pagar nos próximos 12 meses
