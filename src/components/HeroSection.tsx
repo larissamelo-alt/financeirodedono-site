@@ -59,7 +59,7 @@ const HeroSection = () => {
             <ScrollReveal delay={400}>
               <div className="flex flex-wrap gap-6 text-primary-foreground/80">
                 <div className="pr-6 border-r border-primary-foreground/15">
-                  <div className="text-2xl font-extrabold text-primary-foreground">+10</div>
+                  <div className="text-2xl font-extrabold text-primary-foreground">+15</div>
                   <div className="text-xs">anos em finanças corporativas</div>
                 </div>
                 <div className="pr-6 border-r border-primary-foreground/15">
