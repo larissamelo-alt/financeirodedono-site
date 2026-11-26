@@ -5,21 +5,21 @@ const WHATSAPP_LINK = "https://wa.me/5548996645113?text=Quero%20meu%20diagnósti
 
 const plans = [
   {
-    name: "Controle de Dono",
-    desc: "Para quem precisa de organização financeira e visibilidade mensal do negócio.",
-    features: ["Conciliação bancária", "DRE gerencial", "Fluxo de caixa realizado", "Indicadores financeiros", "Reunião mensal 30 min", "Atendimento via WhatsApp"],
+    name: "Rotina financeira",
+    desc: "A operação do dia a dia organizada, para você saber o que entrou, o que saiu e o que sobrou.",
+    features: ["Conciliação bancária", "Contas a pagar e a receber", "DRE gerencial", "Fluxo de caixa realizado", "Indicadores financeiros"],
     highlighted: false,
   },
   {
-    name: "Estratégico de Dono",
-    desc: "Para quem quer fluxo de caixa projetado e apoio contínuo nas decisões do negócio.",
-    features: ["Tudo do Controle de Dono", "Fluxo de caixa projetado", "Contas a pagar/receber", "Planejamento financeiro", "Reunião mensal 60 min", "Contato direto com Jonny"],
+    name: "Planejamento",
+    desc: "O caixa dos próximos meses desenhado antes de acontecer.",
+    features: ["Fluxo de caixa projetado", "Orçamento anual pelo caixa", "Cenários para contratar, investir ou abrir unidade"],
     highlighted: true,
   },
   {
-    name: "CFO de Dono",
-    desc: "Para quem precisa de um CFO dedicado com visão estratégica de médio e longo prazo.",
-    features: ["Tudo do Estratégico de Dono", "Planejamento de longo prazo", "Análise de riscos e cenários", "Estruturação do time financeiro", "Reunião semanal 60 min", "Acesso direto ao Jonny"],
+    name: "Decisão com o Jonny",
+    desc: "Os números lidos com quem já foi CFO, para decidir com segurança.",
+    features: ["Reuniões de leitura dos números", "Análise de preço e margem", "Apoio nas decisões de médio e longo prazo"],
     highlighted: false,
   },
 ];
@@ -31,10 +31,10 @@ const PlansSection = () => {
         <ScrollReveal>
           <div className="text-center max-w-2xl mx-auto mb-14">
             <h2 className="text-3xl lg:text-4xl font-extrabold text-foreground mb-4">
-              Escolha o nível de apoio certo para o seu momento
+              O que a gente pode assumir no seu financeiro
             </h2>
             <p className="text-muted-foreground">
-              O escopo e o investimento são definidos com você, depois do diagnóstico. Cada negócio de serviço tem uma estrutura financeira diferente, e o apoio certo muda junto.
+              Escopo e investimento definidos com você no diagnóstico. Você contrata o que a sua empresa precisa, não um pacote.
             </p>
           </div>
         </ScrollReveal>
@@ -82,7 +82,7 @@ const PlansSection = () => {
 
         <ScrollReveal delay={400}>
           <p className="text-center text-sm text-muted-foreground mt-10">
-            Nenhum desses nomes é um pacote fechado. É o ponto de partida da conversa no diagnóstico.
+            Dá para combinar as frentes. O escopo de cada projeto sai do diagnóstico gratuito.
           </p>
         </ScrollReveal>
       </div>
