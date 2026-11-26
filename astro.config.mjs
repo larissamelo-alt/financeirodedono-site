@@ -11,6 +11,9 @@ export default defineConfig({
     react(),
     // applyBaseStyles: false porque o seu reset/base vem do global.css (shadcn). Evita conflito.
     tailwind({ applyBaseStyles: false }),
-    sitemap(),
+    // A aula gravada é servida por rewrite (vercel.json), então entra no sitemap à mão.
+    sitemap({
+      customPages: ["https://www.financeirodedono.com.br/conteudos/aula-planejamento-2027"],
+    }),
   ],
 });
