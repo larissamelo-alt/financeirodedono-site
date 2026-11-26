@@ -1,0 +1,20 @@
+{
+  "rewrites": [
+    {
+      "source": "/conteudos/aula-planejamento-2027",
+      "destination": "https://planejamento27.financeirodedono.com.br/conteudos/aula-planejamento-2027"
+    },
+    {
+      "source": "/assets/:path*",
+      "destination": "https://planejamento27.financeirodedono.com.br/assets/:path*"
+    },
+    {
+      "source": "/images/:path*",
+      "destination": "https://planejamento27.financeirodedono.com.br/images/:path*"
+    },
+    {
+      "source": "/privacidade",
+      "destination": "https://planejamento27.financeirodedono.com.br/privacidade"
+    }
+  ]
+}
