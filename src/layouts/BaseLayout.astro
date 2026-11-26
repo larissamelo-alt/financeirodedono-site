@@ -13,14 +13,46 @@ const { titulo, descricao, imagem, tipo } = Astro.props;
 
 // Dados estruturados da empresa (schema.org). É isto que faz o Google e as IAs
 // entenderem QUEM é o autor por trás do conteúdo — e ganharem confiança para citar.
+const jonny = {
+  "@type": "Person",
+  "@id": "https://www.financeirodedono.com.br/#jonny-elias",
+  name: "Jonny Elias",
+  jobTitle: "Fundador da Financeiro de Dono",
+  description:
+    "Ex-CFO e COO, com 15 anos em finanças corporativas e gestão de R$ 1,5 bilhão por ano. Professor universitário de finanças, MBA em Gestão Financeira e CPA-20.",
+  sameAs: [
+    "https://www.linkedin.com/in/jonnyelias/",
+    "https://www.instagram.com/jonny.elias/",
+    "https://www.youtube.com/@jonnyelias",
+  ],
+};
+
 const organizacao = {
   "@context": "https://schema.org",
   "@type": "Organization",
+  "@id": "https://www.financeirodedono.com.br/#organizacao",
   name: "Financeiro de Dono",
+  legalName: "Financeiro de Dono Consultoria e BPO Financeiro Ltda",
+  taxID: "47.318.547/0001-01",
   url: "https://www.financeirodedono.com.br",
+  logo: "https://www.financeirodedono.com.br/favicon.png",
+  image: "https://www.financeirodedono.com.br/og-image.png",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Florianópolis",
+    addressRegion: "SC",
+    addressCountry: "BR",
+  },
+  contactPoint: {
+    "@type": "ContactPoint",
+    contactType: "sales",
+    telephone: "+55-48-99664-5113",
+    availableLanguage: "Portuguese",
+  },
+  sameAs: ["https://www.instagram.com/financeirodedono/"],
   description:
     "BPO Financeiro e CFO sob demanda para donos de empresas de serviço que faturam entre R$ 50k e R$ 500k por mês.",
-  founder: { "@type": "Person", name: "Jonny Elias" },
+  founder: jonny,
   areaServed: "BR",
   knowsAbout: [
     "BPO Financeiro",
@@ -28,6 +60,8 @@ const organizacao = {
     "Fluxo de caixa",
     "DRE",
     "Gestão financeira para clínicas",
+    "Planejamento financeiro",
+    "Orçamento empresarial",
   ],
 };
 ---
