@@ -10,10 +10,31 @@ interface Props {
   categoria: string;
   capa?: string;
   slug: string;
+  // Perguntas e respostas extraídas da seção "## Perguntas frequentes" do artigo.
+  faq?: { pergunta: string; resposta: string }[];
+  // Artigos relacionados (mesma categoria ou tags em comum), para links internos.
+  relacionados?: { slug: string; titulo: string; categoria: string }[];
 }
 
-const { titulo, descricao, data, atualizadoEm, autor, categoria, capa, slug } =
-  Astro.props;
+const {
+  titulo,
+  descricao,
+  data,
+  atualizadoEm,
+  autor,
+  categoria,
+  capa,
+  slug,
+  faq = [],
+  relacionados = [],
+} = Astro.props;
+
+// Materiais gratuitos mostrados no fim de todo artigo (links internos fixos).
+const materiais = [
+  { titulo: "Aula gratuita: planejamento financeiro 2027", href: "/conteudos/aula-planejamento-2027" },
+  { titulo: "Planilha de fluxo de caixa e DRE gerencial", href: "/conteudos/planilha-fluxo-de-caixa-dre/" },
+  { titulo: "Calculadora de capital de giro", href: "/conteudos/capital-de-giro-o-que-e/" },
+].filter((m) => !m.href.includes(slug));
 
 const urlArtigo = new URL(`/conteudos/${slug}`, Astro.site).href;
 
@@ -22,6 +43,9 @@ function formatarData(d: Date) {
     day: "2-digit",
     month: "long",
     year: "numeric",
+    // As datas do cabeçalho são dias "puros" (sem hora). Fixar UTC evita que
+    // o build em outro fuso mostre o dia anterior.
+    timeZone: "UTC",
   });
 }
 
@@ -53,6 +77,21 @@ const artigoSchema = {
   ...(capa ? { image: new URL(capa, Astro.site).href } : {}),
 };
 
+// Perguntas frequentes (schema.org/FAQPage). Só entra quando o artigo tem a
+// seção "## Perguntas frequentes" com perguntas em "###".
+const faqSchema =
+  faq.length > 0
+    ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: faq.map((f) => ({
+          "@type": "Question",
+          name: f.pergunta,
+          acceptedAnswer: { "@type": "Answer", text: f.resposta },
+        })),
+      }
+    : null;
+
 // Trilha de navegação (ajuda o Google a entender a hierarquia do site).
 const breadcrumb = {
   "@context": "https://schema.org",
@@ -73,6 +112,7 @@ const breadcrumb = {
 <BaseLayout titulo={titulo} descricao={descricao} imagem={capa} tipo="article">
   <script type="application/ld+json" set:html={JSON.stringify(artigoSchema)} />
   <script type="application/ld+json" set:html={JSON.stringify(breadcrumb)} />
+  {faqSchema && <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />}
 
   <main class="mx-auto max-w-3xl px-5 py-12 md:py-16">
     <nav class="mb-8 text-sm text-muted-foreground">
@@ -90,7 +130,16 @@ const breadcrumb = {
       </h1>
       <p class="mt-4 text-lg text-muted-foreground">{descricao}</p>
       <div class="mt-6 flex items-center gap-2 text-sm text-muted-foreground">
-        <span>{autor}</span>
+        {
+          autor === "Jonny Elias" ? (
+            <span>
+              <strong class="font-medium text-foreground">Jonny Elias</strong>, fundador do
+              Financeiro de Dono · ex-CFO, 15 anos em finanças corporativas
+            </span>
+          ) : (
+            <span>{autor}</span>
+          )
+        }
         <span>·</span>
         <time datetime={data.toISOString()}>{formatarData(data)}</time>
         {
@@ -121,12 +170,45 @@ const breadcrumb = {
       <slot />
     </article>
 
+    {
+      relacionados.length > 0 && (
+        <nav class="mt-14 border-t border-border pt-8" aria-labelledby="leia-tambem">
+          <h2 id="leia-tambem" class="text-xl font-bold text-foreground">Leia também</h2>
+          <ul class="mt-4 space-y-3">
+            {relacionados.map((r) => (
+              <li>
+                <a href={`/conteudos/${r.slug}/`} class="font-medium text-primary hover:underline">
+                  {r.titulo}
+                </a>
+                <span class="ml-2 text-sm text-muted-foreground">{r.categoria}</span>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      )
+    }
+
+    <aside class="mt-10" aria-labelledby="materiais-gratuitos">
+      <h2 id="materiais-gratuitos" class="text-xl font-bold text-foreground">Materiais gratuitos</h2>
+      <ul class="mt-4 space-y-3">
+        {
+          materiais.map((m) => (
+            <li>
+              <a href={m.href} class="font-medium text-primary hover:underline">
+                {m.titulo}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </aside>
+
     <div class="mt-16 rounded-xl border border-border bg-card p-8 text-center">
       <p class="text-lg font-semibold text-foreground">
         Quer enxergar o financeiro da sua empresa com essa clareza?
       </p>
       <p class="mt-2 text-muted-foreground">
-        Agende um diagnóstico gratuito de 30 minutos.
+        Agende um diagnóstico gratuito de 30 minutos com o Jonny Elias.
       </p>
       <a
         href="https://wa.me/5548996645113?text=Quero%20meu%20diagn%C3%B3stico%20gratuito"
