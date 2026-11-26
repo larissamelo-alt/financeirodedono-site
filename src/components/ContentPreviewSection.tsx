@@ -27,7 +27,7 @@ const ContentPreviewSection = ({ artigos }: Props) => {
                 Financeiro aplicado, sem enrolação
               </h2>
               <p className="text-muted-foreground max-w-lg">
-                Conteúdo real sobre decisão financeira para dono de empresa de serviço. Sem fórmula mágica, sem venda disfarçada.
+                Conteúdo real sobre decisão financeira para dono de empresa. Sem fórmula mágica, sem venda disfarçada.
               </p>
             </div>
             <a
