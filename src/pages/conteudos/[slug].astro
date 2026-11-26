@@ -14,6 +14,50 @@ export async function getStaticPaths() {
 
 const { artigo } = Astro.props;
 const { Content } = await render(artigo);
+
+// Tira a marcação de Markdown de um trecho (links, negrito, itálico, código).
+function textoPuro(md: string) {
+  return md
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1")
+    .replace(/[*_`]/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+// FAQ: lê a seção "## Perguntas frequentes". Cada "### Pergunta" vira uma
+// pergunta, e o primeiro parágrafo abaixo dela vira a resposta. Assim o
+// FAQPage dos dados estruturados sempre bate com o texto visível.
+const faq: { pergunta: string; resposta: string }[] = [];
+const corpo = artigo.body ?? "";
+const inicioFaq = corpo.search(/^##\s+Perguntas frequentes\s*$/m);
+if (inicioFaq >= 0) {
+  const resto = corpo.slice(inicioFaq).split("\n").slice(1).join("\n");
+  const fim = resto.search(/^##\s/m);
+  const secao = fim >= 0 ? resto.slice(0, fim) : resto;
+  for (const bloco of secao.split(/^###\s+/m).slice(1)) {
+    const [linhaPergunta, ...linhas] = bloco.split("\n");
+    const primeiroParagrafo = linhas.join("\n").trim().split(/\n\s*\n/)[0] ?? "";
+    const pergunta = textoPuro(linhaPergunta);
+    const resposta = textoPuro(primeiroParagrafo);
+    if (pergunta && resposta) faq.push({ pergunta, resposta });
+  }
+}
+
+// Relacionados: mesma categoria vale 2 pontos, cada tag em comum vale 1.
+// Pega os 3 com mais pontos (empate: o mais recente).
+const todos = await getCollection("conteudos", ({ data }) => !data.rascunho);
+const relacionados = todos
+  .filter((a) => a.slug !== artigo.slug)
+  .map((a) => ({
+    a,
+    pontos:
+      (a.data.categoria === artigo.data.categoria ? 2 : 0) +
+      a.data.tags.filter((t) => artigo.data.tags.includes(t)).length,
+  }))
+  .filter((x) => x.pontos > 0)
+  .sort((x, y) => y.pontos - x.pontos || y.a.data.data.valueOf() - x.a.data.data.valueOf())
+  .slice(0, 3)
+  .map(({ a }) => ({ slug: a.slug, titulo: a.data.titulo, categoria: a.data.categoria }));
 ---
 
 <ArtigoLayout
@@ -25,6 +69,8 @@ const { Content } = await render(artigo);
   categoria={artigo.data.categoria}
   capa={artigo.data.capa}
   slug={artigo.slug}
+  faq={faq}
+  relacionados={relacionados}
 >
   <Content />
 </ArtigoLayout>
