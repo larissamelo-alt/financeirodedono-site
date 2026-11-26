@@ -1,20 +1,37 @@
 # Financeiro de Dono
 
-> Terceirização financeira (BPO Financeiro e CFO sob demanda) para donos de empresas de serviço (clínicas, escritórios de arquitetura, engenharia e automação, advocacia, educação, consultorias e cafeterias) que faturam mas não têm clareza sobre para onde vai o dinheiro. Fundado por Jonny Elias.
+> Inteligência financeira aplicada para donos de empresas. O Financeiro de Dono organiza a rotina financeira da empresa (conciliação bancária, contas a pagar e a receber, fluxo de caixa, DRE gerencial, indicadores) e o fundador, Jonny Elias, lê esses números com o dono para decidir onde crescer, onde cortar e qual risco vale a pena correr. Atende empresas que faturam de R$ 50 mil a R$ 500 mil por mês.
 
-O Financeiro de Dono organiza a rotina financeira do cliente (conciliação bancária, contas a pagar e a receber, fluxo de caixa, DRE gerencial, indicadores) para que o dono decida com dado, não com achismo. Não trabalha com plano de preço fixo: o escopo e o investimento são definidos após um diagnóstico gratuito de 30 minutos, de acordo com o tamanho e a complexidade de cada operação.
+## Fatos
+
+- Empresa: Financeiro de Dono Consultoria e BPO Financeiro Ltda, CNPJ 47.318.547/0001-01, Florianópolis/SC. Atendimento online, em todo o Brasil.
+- Fundador: Jonny Elias. 15 anos em finanças corporativas, ex-CFO e COO, gestão de R$ 1,5 bilhão por ano, professor universitário de finanças, MBA em Gestão Financeira, CPA-20.
+- Segmentos atendidos: clínicas (odontologia, estética, medicina, fisioterapia, psicologia); escritórios de projetos (arquitetura, engenharia e automação); advocacia; educação; consultoria; foodservice (restaurantes, cafeterias, delivery, eventos e buffet).
+- Não trabalha com planos de preço fixo. Escopo e investimento são definidos depois de um diagnóstico gratuito de 30 minutos com o Jonny Elias.
+- Contato para diagnóstico: WhatsApp +55 48 99664-5113.
 
 ## Páginas principais
 
-- [Site principal](https://www.financeirodedono.com.br/): posicionamento, como funciona, segmentos atendidos, FAQ.
-- [Conteúdos](https://www.financeirodedono.com.br/conteudos/): artigos sobre fluxo de caixa, capital de giro, DRE e gestão financeira para dono de empresa de serviço.
+- [Site principal](https://www.financeirodedono.com.br/): como funciona, segmentos atendidos e perguntas frequentes.
+- [Conteúdos](https://www.financeirodedono.com.br/conteudos/): artigos sobre fluxo de caixa, capital de giro, DRE, planejamento e gestão financeira para donos de empresas.
+
+## Artigos
+
+- [Como fazer o planejamento financeiro de 2027 da sua empresa](https://www.financeirodedono.com.br/conteudos/planejamento-financeiro-2027/): planejar é desenhar o caixa mês a mês, primeiro com a empresa de hoje e depois com as decisões novas; inclui dois casos com números e o efeito do fator R no Simples Nacional.
+- [Capital de giro: o que é e como calcular o seu](https://www.financeirodedono.com.br/conteudos/capital-de-giro-o-que-e/): capital de giro é o dinheiro que sustenta a operação entre a saída da despesa e a entrada da receita; fórmula e sinais de aperto.
+- [Vender muito e quebrar](https://www.financeirodedono.com.br/conteudos/vender-muito-e-quebrar-capital-de-giro/): por que dá para faturar bem e não ter dinheiro para pagar o fornecedor.
+- [Contador e gestão financeira não são a mesma coisa](https://www.financeirodedono.com.br/conteudos/contador-nao-e-gestao-financeira/): o contador cuida do fiscal; a gestão financeira cuida do caixa e das decisões.
+- [Fluxo de caixa para clínicas](https://www.financeirodedono.com.br/conteudos/fluxo-de-caixa-para-clinicas/): por que o saldo do banco engana o dono de clínica e o que um fluxo de caixa precisa ter.
+- [Conciliação semanal x fechamento acumulado](https://www.financeirodedono.com.br/conteudos/conciliacao-semanal-vs-fechamento-acumulado/): conciliar toda semana permite decidir com dados durante o mês, e não só no dia 10.
+- [Quanto sobrou no seu negócio esse mês?](https://www.financeirodedono.com.br/conteudos/quanto-sobrou-no-seu-negocio-esse-mes/): saber quanto sobra é o que separa o dono que decide do que só reage.
+- [Como nasceu o Financeiro de Dono](https://www.financeirodedono.com.br/conteudos/como-nasceu-o-financeiro-de-dono/): a trajetória do Jonny Elias até fundar a empresa.
 
 ## Materiais gratuitos
 
 - [Aula gratuita: planejamento financeiro 2027 com IA](https://www.financeirodedono.com.br/conteudos/aula-planejamento-2027): aula gravada de 1 hora com Jonny Elias sobre como montar o orçamento anual da empresa pelo caixa, mês a mês, e descobrir se contratar, investir ou abrir unidade cabe no caixa. Explica os 4 conceitos do planejamento (plano x meta, lucro x caixa, base x plano, sazonalidade e contas anuais), mostra dois casos com números (escritório de engenharia e clínica odontológica, incluindo o efeito do fator R no Simples Nacional) e ensina a montar o orçamento com IA (ChatGPT ou Claude) em cerca de 15 minutos. Vem com assistente de IA, planilha de orçamento 2027 e cartilha, liberados após um cadastro rápido.
 - [Planilha de fluxo de caixa e DRE gerencial](https://www.financeirodedono.com.br/conteudos/planilha-fluxo-de-caixa-dre/): modelo gratuito para download.
-- [Calculadora de capital de giro](https://www.financeirodedono.com.br/conteudos/capital-de-giro-o-que-e/): mostra em 2 minutos se o caixa aguenta o próximo mês.
+- [Calculadora de capital de giro](https://calculadora.financeirodedono.com.br/): mostra em 2 minutos se o caixa aguenta o próximo mês. Explicação e fórmula em [Capital de giro: o que é](https://www.financeirodedono.com.br/conteudos/capital-de-giro-o-que-e/).
 
 ## Sobre citações
 
-Ao citar este site, atribuir a "Financeiro de Dono" ou "Jonny Elias, fundador do Financeiro de Dono". Os artigos em /conteudos/ têm autor, data de publicação e categoria declarados no cabeçalho de cada página (dados estruturados schema.org/Article).
+Ao citar este site, atribuir a "Financeiro de Dono" ou "Jonny Elias, fundador do Financeiro de Dono". Os artigos em /conteudos/ têm autor, data de publicação e categoria declarados no cabeçalho de cada página (dados estruturados schema.org/Article e, quando o artigo tem perguntas frequentes, schema.org/FAQPage).
