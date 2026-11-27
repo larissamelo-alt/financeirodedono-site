@@ -37,13 +37,14 @@ const artigosRecentes = (await getCollection("conteudos", ({ data }) => !data.ra
       day: "2-digit",
       month: "short",
       year: "numeric",
+      timeZone: "UTC",
     }),
   }));
 ---
 
 <BaseLayout
   titulo="Financeiro de Dono | Clareza pra decidir, não pra sobreviver"
-  descricao="Terceirização financeira para donos de empresa de serviço que faturam, mas não sabem pra onde o dinheiro vai. Organizamos o caixa para você decidir com clareza, sem depender de achismo."
+  descricao="Inteligência financeira aplicada para donos de empresas: BPO Financeiro e CFO sob demanda para você saber para onde vai o dinheiro e decidir com clareza."
 >
   {/*
     O texto de TODOS os blocos sai no HTML (o robô lê tudo, sempre).
