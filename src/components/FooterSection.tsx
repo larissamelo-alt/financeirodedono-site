@@ -4,7 +4,7 @@ const navLinks = [
   { label: "Início", href: "#inicio" },
   { label: "Como funciona", href: "#como-funciona" },
   { label: "Nível de apoio", href: "#planos" },
-  { label: "Conteúdo", href: "/conteudos" },
+  { label: "Conteúdo", href: "/conteudos/" },
   { label: "FAQ", href: "#faq" },
   { label: "Instagram", href: "https://instagram.com/jonny.elias" },
 ];
