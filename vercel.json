@@ -1,4 +1,16 @@
 {
+  "redirects": [
+    {
+      "source": "/conteudos",
+      "destination": "/conteudos/",
+      "permanent": true
+    },
+    {
+      "source": "/conteudos/:slug((?!aula-planejamento-2027$)[^/.]+)",
+      "destination": "/conteudos/:slug/",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/conteudos/aula-planejamento-2027",

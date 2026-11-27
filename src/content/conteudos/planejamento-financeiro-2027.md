@@ -100,7 +100,7 @@ Uma planilha de orçamento pelo caixa se lê de cima para baixo, mês a mês:
 
 Montar tudo isso à mão dá trabalho. Na aula gratuita de planejamento 2027, o Jonny Elias mostra um assistente de IA que monta o orçamento junto com você, no ChatGPT ou no Claude:
 
-1. **Baixe** o arquivo Orcamento-2027-FDD.zip, que vem com o material da aula.
+1. **Baixe** o arquivo Orcamento-2027-Financeiro de Dono.zip, que vem com o material da aula.
 2. **Abra uma conversa nova**, solte o .zip e escreva "Monte meu orçamento de 2027". O assistente faz 6 perguntas sobre a sua empresa.
 3. **Receba a planilha pronta em Excel** e simule decisões, por exemplo "quero contratar alguém em março", comparando o base com o plano.
 

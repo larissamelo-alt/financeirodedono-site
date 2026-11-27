@@ -1,5 +1,5 @@
 ---
-titulo: "Fluxo de caixa para clínicas: o erro que faz o dono achar que tem dinheiro e não tem"
+titulo: "Fluxo de caixa para clínicas: por que o saldo do banco engana"
 descricao: "Por que o saldo da conta engana o dono de clínica e como montar um fluxo de caixa que mostra a verdade antes de a conta apertar."
 data: 2026-06-19
 autor: "Jonny Elias"

@@ -31,7 +31,7 @@ const ContentPreviewSection = ({ artigos }: Props) => {
               </p>
             </div>
             <a
-              href="/conteudos"
+              href="/conteudos/"
               className="inline-flex items-center gap-1.5 text-sm font-bold text-primary hover:gap-2.5 transition-all flex-shrink-0"
             >
               Ver todos os conteúdos
