@@ -27,7 +27,7 @@ const ContentPreviewSection = ({ artigos }: Props) => {
                 Financeiro aplicado, sem enrolação
               </h2>
               <p className="text-muted-foreground max-w-lg">
-                Conteúdo real sobre decisão financeira para dono de empresa de serviço. Sem fórmula mágica, sem venda disfarçada.
+                Conteúdo real sobre decisão financeira para dono de empresa. Sem fórmula mágica, sem venda disfarçada.
               </p>
             </div>
             <a
@@ -44,7 +44,7 @@ const ContentPreviewSection = ({ artigos }: Props) => {
           {artigos.map((a, i) => (
             <ScrollReveal key={a.slug} delay={i * 100}>
               <a
-                href={`/conteudos/${a.slug}`}
+                href={`/conteudos/${a.slug}/`}
                 className="flex flex-col h-full rounded-2xl overflow-hidden border border-border bg-card hover:border-primary/40 hover:shadow-card-hover transition-all"
               >
                 <div className="aspect-video w-full bg-dark flex items-center justify-center">
