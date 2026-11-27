@@ -6,6 +6,17 @@ autor: "Jonny Elias"
 categoria: "Gestão Financeira"
 tags: ["planejamento financeiro", "orçamento empresarial", "fluxo de caixa", "Simples Nacional", "fator R", "IA"]
 rascunho: false
+faq:
+  - pergunta: "Quando devo fazer o planejamento financeiro do ano seguinte?"
+    resposta: "Entre outubro e dezembro, antes de assumir compromissos para o ano novo. Assim dá tempo de ajustar preço, contratação e retirada antes de janeiro."
+  - pergunta: "Preciso entender de finanças para planejar?"
+    resposta: "Não. O planejamento é para quem decide, não para quem opera planilha. Com uma planilha pronta ou um assistente de IA, você responde perguntas sobre a sua empresa e as contas são feitas para você."
+  - pergunta: "Posso planejar só pelo faturamento?"
+    resposta: "Não é suficiente. O faturamento mostra quanto você vende, mas não mostra se o dinheiro chega a tempo de pagar as contas de cada mês. Por isso o planejamento é feito pelo caixa."
+  - pergunta: "O que fazer se algum mês ficar negativo no plano?"
+    resposta: "Esse é justamente o valor de planejar antes. Você pode mudar a data de uma contratação, rever o preço, guardar caixa nos meses fortes ou buscar crédito com antecedência, em vez de descobrir o problema quando ele chega."
+  - pergunta: "Uso o Simples Nacional. Isso muda o planejamento?"
+    resposta: "Muda. A alíquota do Simples sobe conforme o faturamento dos últimos 12 meses, e em algumas atividades o tamanho da folha de pagamento (fator R) altera o imposto. Vale colocar isso no orçamento mês a mês, como no caso da clínica acima."
 capa: "/capas/planejamento-financeiro-2027.png"
 ---
 
@@ -96,27 +107,3 @@ Montar tudo isso à mão dá trabalho. Na aula gratuita de planejamento 2027, o 
 Se preferir, a mesma planilha pode ser preenchida à mão. Você preenche as células amarelas e ela calcula o imposto do Simples, FGTS, 13º, férias, totais e o saldo de cada mês.
 
 **[Assista à aula gratuita e baixe o material](/conteudos/aula-planejamento-2027)**
-
-## Perguntas frequentes
-
-### Quando devo fazer o planejamento financeiro do ano seguinte?
-
-Entre outubro e dezembro, antes de assumir compromissos para o ano novo. Assim dá tempo de ajustar preço, contratação e retirada antes de janeiro.
-
-### Preciso entender de finanças para planejar?
-
-Não. O planejamento é para quem decide, não para quem opera planilha. Com uma planilha pronta ou um assistente de IA, você responde perguntas sobre a sua empresa e as contas são feitas para você.
-
-### Posso planejar só pelo faturamento?
-
-Não é suficiente. O faturamento mostra quanto você vende, mas não mostra se o dinheiro chega a tempo de pagar as contas de cada mês. Por isso o planejamento é feito pelo caixa.
-
-### O que fazer se algum mês ficar negativo no plano?
-
-Esse é justamente o valor de planejar antes. Você pode mudar a data de uma contratação, rever o preço, guardar caixa nos meses fortes ou buscar crédito com antecedência, em vez de descobrir o problema quando ele chega.
-
-### Uso o Simples Nacional. Isso muda o planejamento?
-
-Muda. A alíquota do Simples sobe conforme o faturamento dos últimos 12 meses, e em algumas atividades o tamanho da folha de pagamento (fator R) altera o imposto. Vale colocar isso no orçamento mês a mês, como no caso da clínica acima.
-
-Quer olhar o planejamento da sua empresa com alguém do lado? No [diagnóstico gratuito](https://wa.me/5548996645113?text=Quero%20meu%20diagn%C3%B3stico%20gratuito) do Financeiro de Dono, o Jonny Elias analisa o seu 2027 com você.

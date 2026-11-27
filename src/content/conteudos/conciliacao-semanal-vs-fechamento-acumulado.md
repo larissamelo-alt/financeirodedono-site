@@ -1,12 +1,12 @@
 ---
 titulo: "Por que você só descobre se o mês foi bom no dia 10 (e como mudar isso)"
-descricao: "Conciliar uma vez por semana ou deixar tudo acumular dá o mesmo trabalho. Mas um te deixa decidir com dados o mês inteiro, e o outro te deixa no escuro por dez dias."
+descricao: "Conciliar toda semana ou deixar acumular dá o mesmo trabalho. Mas um deixa você decidir com dados o mês inteiro, e o outro te deixa no escuro por dez dias."
 data: 2026-06-03
 autor: "Jonny Elias"
 categoria: "Rotina Financeira"
 tags: ["conciliação", "fluxo de caixa", "fechamento de mês", "DRE"]
 rascunho: false
-capa: "/capas/conciliacao-semanal-vs-fechamento-acumulado.jgp"
+capa: "/capas/conciliacao-semanal-vs-fechamento-acumulado.jpg"
 ---
 
 Faltam três dias para o mês fechar. Você sabe como ele vai terminar? Não o faturamento — o resultado real, o que vai sobrar depois que tudo for pago.

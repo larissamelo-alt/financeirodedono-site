@@ -1,6 +1,6 @@
 ---
 titulo: "Vender muito e quebrar: o problema de capital de giro que ninguém te explica"
-descricao: "Dá para faturar R$ 80 mil no mês e não ter dinheiro para pagar o fornecedor. Entenda o capital de giro — a diferença entre o que entra e o que sai — que financia ou afunda a sua empresa."
+descricao: "Dá para faturar R$ 80 mil no mês e não ter dinheiro para pagar o fornecedor. Entenda o capital de giro, que financia ou afunda a sua empresa."
 data: 2026-06-17
 autor: "Jonny Elias"
 categoria: "Capital de Giro"
