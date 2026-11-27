@@ -149,8 +149,7 @@ const materiais = [
       <p class="mt-4 text-lg text-muted-foreground">{descricao}</p>
       <div class="mt-6 text-sm text-muted-foreground">
         <p>
-          <span class="font-medium text-foreground">{autor}</span>
-          {ehJonny && <span>, fundador do Financeiro de Dono. Ex-CFO e COO, 15 anos em finanças corporativas.</span>}
+          <span class="font-medium text-foreground">{autor}</span>{ehJonny && <span>, fundador do Financeiro de Dono. Ex-CFO e COO, 15 anos em finanças corporativas.</span>}
         </p>
         <p class="mt-1 flex flex-wrap items-center gap-2">
           <span>Publicado em <time datetime={data.toISOString()}>{formatarData(data)}</time></span>
