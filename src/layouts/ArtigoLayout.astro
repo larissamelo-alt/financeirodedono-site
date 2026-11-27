@@ -1,6 +1,13 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
 
+interface ArtigoRelacionado {
+  slug: string;
+  titulo: string;
+  descricao: string;
+  categoria: string;
+}
+
 interface Props {
   titulo: string;
   descricao: string;
@@ -10,20 +17,38 @@ interface Props {
   categoria: string;
   capa?: string;
   slug: string;
+  faq?: { pergunta: string; resposta: string }[];
+  relacionados?: ArtigoRelacionado[];
 }
 
-const { titulo, descricao, data, atualizadoEm, autor, categoria, capa, slug } =
-  Astro.props;
+const {
+  titulo,
+  descricao,
+  data,
+  atualizadoEm,
+  autor,
+  categoria,
+  capa,
+  slug,
+  faq = [],
+  relacionados = [],
+} = Astro.props;
 
-const urlArtigo = new URL(`/conteudos/${slug}`, Astro.site).href;
+// Endereço oficial do artigo, sempre com barra no fim (igual ao sitemap e ao canonical).
+const urlArtigo = new URL(`/conteudos/${slug}/`, Astro.site).href;
 
+// timeZone "UTC" evita que a data apareça um dia antes quando o build roda
+// num servidor com outro fuso.
 function formatarData(d: Date) {
   return d.toLocaleDateString("pt-BR", {
     day: "2-digit",
     month: "long",
     year: "numeric",
+    timeZone: "UTC",
   });
 }
+
+const ehJonny = autor === "Jonny Elias";
 
 // Dados estruturados do artigo (schema.org/Article). É o que permite a uma IA
 // citar "segundo o Financeiro de Dono..." com data, autor e título corretos.
@@ -34,15 +59,14 @@ const artigoSchema = {
   description: descricao,
   datePublished: data.toISOString(),
   dateModified: (atualizadoEm ?? data).toISOString(),
-  author:
-    autor === "Jonny Elias"
-      ? {
-          "@type": "Person",
-          "@id": "https://www.financeirodedono.com.br/#jonny-elias",
-          name: autor,
-          url: "https://www.linkedin.com/in/jonnyelias/",
-        }
-      : { "@type": "Person", name: autor },
+  author: ehJonny
+    ? {
+        "@type": "Person",
+        "@id": "https://www.financeirodedono.com.br/#jonny-elias",
+        name: autor,
+        url: "https://www.linkedin.com/in/jonnyelias/",
+      }
+    : { "@type": "Person", name: autor },
   publisher: {
     "@type": "Organization",
     "@id": "https://www.financeirodedono.com.br/#organizacao",
@@ -52,6 +76,20 @@ const artigoSchema = {
   mainEntityOfPage: { "@type": "WebPage", "@id": urlArtigo },
   ...(capa ? { image: new URL(capa, Astro.site).href } : {}),
 };
+
+// Perguntas frequentes: o mesmo texto aparece na página e no FAQPage.
+const faqSchema =
+  faq.length > 0
+    ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: faq.map((item) => ({
+          "@type": "Question",
+          name: item.pergunta,
+          acceptedAnswer: { "@type": "Answer", text: item.resposta },
+        })),
+      }
+    : null;
 
 // Trilha de navegação (ajuda o Google a entender a hierarquia do site).
 const breadcrumb = {
@@ -63,22 +101,42 @@ const breadcrumb = {
       "@type": "ListItem",
       position: 2,
       name: "Conteúdos",
-      item: new URL("/conteudos", Astro.site).href,
+      item: new URL("/conteudos/", Astro.site).href,
     },
     { "@type": "ListItem", position: 3, name: titulo, item: urlArtigo },
   ],
 };
+
+// Materiais gratuitos que aparecem no fim de todo artigo (menos no próprio material).
+const materiais = [
+  {
+    titulo: "Aula: planejamento financeiro 2027",
+    desc: "Monte o orçamento do ano com IA e veja o que o caixa sustenta.",
+    href: "/conteudos/aula-planejamento-2027",
+  },
+  {
+    titulo: "Planilha de fluxo de caixa e DRE",
+    desc: "O modelo que a gente usa com cliente, gratuito.",
+    href: "/conteudos/planilha-fluxo-de-caixa-dre/",
+  },
+  {
+    titulo: "Calculadora de capital de giro",
+    desc: "Descubra em 2 minutos se o caixa aguenta o próximo mês.",
+    href: "/conteudos/capital-de-giro-o-que-e/",
+  },
+].filter((m) => !m.href.includes(`/${slug}/`));
 ---
 
 <BaseLayout titulo={titulo} descricao={descricao} imagem={capa} tipo="article">
   <script type="application/ld+json" set:html={JSON.stringify(artigoSchema)} />
   <script type="application/ld+json" set:html={JSON.stringify(breadcrumb)} />
+  {faqSchema && <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />}
 
   <main class="mx-auto max-w-3xl px-5 py-12 md:py-16">
     <nav class="mb-8 text-sm text-muted-foreground">
       <a href="/" class="hover:text-foreground">Início</a>
       <span class="mx-2">/</span>
-      <a href="/conteudos" class="hover:text-foreground">Conteúdos</a>
+      <a href="/conteudos/" class="hover:text-foreground">Conteúdos</a>
     </nav>
 
     <header class="mb-10">
@@ -89,18 +147,24 @@ const breadcrumb = {
         {titulo}
       </h1>
       <p class="mt-4 text-lg text-muted-foreground">{descricao}</p>
-      <div class="mt-6 flex items-center gap-2 text-sm text-muted-foreground">
-        <span>{autor}</span>
-        <span>·</span>
-        <time datetime={data.toISOString()}>{formatarData(data)}</time>
-        {
-          atualizadoEm && (
-            <>
-              <span>·</span>
-              <span>atualizado em {formatarData(atualizadoEm)}</span>
-            </>
-          )
-        }
+      <div class="mt-6 text-sm text-muted-foreground">
+        <p>
+          <span class="font-medium text-foreground">{autor}</span>
+          {ehJonny && <span>, fundador do Financeiro de Dono. Ex-CFO e COO, 15 anos em finanças corporativas.</span>}
+        </p>
+        <p class="mt-1 flex flex-wrap items-center gap-2">
+          <span>Publicado em <time datetime={data.toISOString()}>{formatarData(data)}</time></span>
+          {
+            atualizadoEm && (
+              <>
+                <span>·</span>
+                <span>
+                  atualizado em <time datetime={atualizadoEm.toISOString()}>{formatarData(atualizadoEm)}</time>
+                </span>
+              </>
+            )
+          }
+        </p>
       </div>
     </header>
 
@@ -119,14 +183,65 @@ const breadcrumb = {
       class="prose prose-neutral max-w-none prose-headings:text-foreground prose-p:text-foreground/90 prose-a:text-primary prose-strong:text-foreground"
     >
       <slot />
+
+      {
+        faq.length > 0 && (
+          <section id="perguntas-frequentes">
+            <h2>Perguntas frequentes</h2>
+            {faq.map((item) => (
+              <>
+                <h3>{item.pergunta}</h3>
+                <p>{item.resposta}</p>
+              </>
+            ))}
+          </section>
+        )
+      }
     </article>
+
+    {
+      relacionados.length > 0 && (
+        <section class="mt-16">
+          <h2 class="mb-5 text-xl font-bold text-foreground">Leia também</h2>
+          <div class="grid gap-4 sm:grid-cols-2">
+            {relacionados.map((r) => (
+              <a
+                href={`/conteudos/${r.slug}/`}
+                class="block rounded-xl border border-border bg-card p-5 transition hover:border-primary/40"
+              >
+                <span class="text-xs font-semibold uppercase tracking-wide text-primary">{r.categoria}</span>
+                <p class="mt-2 font-semibold text-foreground">{r.titulo}</p>
+                <p class="mt-1 text-sm text-muted-foreground">{r.descricao}</p>
+              </a>
+            ))}
+          </div>
+        </section>
+      )
+    }
+
+    <section class="mt-12">
+      <h2 class="mb-5 text-xl font-bold text-foreground">Materiais gratuitos</h2>
+      <div class="grid gap-4 sm:grid-cols-2">
+        {
+          materiais.map((m) => (
+            <a
+              href={m.href}
+              class="block rounded-xl border border-border bg-card p-5 transition hover:border-primary/40"
+            >
+              <p class="font-semibold text-foreground">{m.titulo}</p>
+              <p class="mt-1 text-sm text-muted-foreground">{m.desc}</p>
+            </a>
+          ))
+        }
+      </div>
+    </section>
 
     <div class="mt-16 rounded-xl border border-border bg-card p-8 text-center">
       <p class="text-lg font-semibold text-foreground">
         Quer enxergar o financeiro da sua empresa com essa clareza?
       </p>
       <p class="mt-2 text-muted-foreground">
-        Agende um diagnóstico gratuito de 30 minutos.
+        Agende um diagnóstico gratuito de 30 minutos com o Jonny Elias.
       </p>
       <a
         href="https://wa.me/5548996645113?text=Quero%20meu%20diagn%C3%B3stico%20gratuito"
