@@ -1,6 +1,6 @@
 ---
 titulo: "Contador e gestão financeira não são a mesma coisa (e confundir isso custa caro)"
-descricao: "O contador cuida do passado fiscal. A gestão financeira cuida do futuro do seu caixa. Entenda a diferença que deixa empresas lucrativas sem dinheiro para pagar a folha no dia 5."
+descricao: "O contador cuida do passado fiscal. A gestão financeira cuida do futuro do caixa. Entenda a diferença que deixa empresa lucrativa sem dinheiro para a folha."
 data: 2026-06-24
 autor: "Jonny Elias"
 categoria: "Gestão Financeira"
@@ -9,7 +9,7 @@ rascunho: false
 capa: "/capas/contador-nao-e-gestao-financeira.jpg"
 ---
 
-Toda semana a gente ouve a mesma frase de dono de empresa de serviço: "mas isso o meu contador já resolve". Resolve uma parte. Não a parte que decide se o seu caixa atravessa o mês.
+Toda semana a gente ouve a mesma frase de dono de empresa: "mas isso o meu contador já resolve". Resolve uma parte. Não a parte que decide se o seu caixa atravessa o mês.
 
 Contador e gestão financeira são duas funções diferentes. E tratar as duas como se fossem a mesma coisa é um dos erros que mais sai caro para a pequena empresa — justamente porque é silencioso. Não aparece num boleto. Aparece no dia em que falta dinheiro sem explicação.
 
@@ -25,7 +25,7 @@ A gestão financeira olha para frente. É fluxo de caixa, capital de giro, proje
 
 Já atendemos clínicas com contador impecável — imposto em dia, balanço perfeito — e que mesmo assim chegavam no dia 5 sem dinheiro para pagar a folha. O contador não errou nada. Simplesmente não era o trabalho dele.
 
-E isso acontece o tempo todo porque o dono de uma empresa de serviço quase nunca veio da área financeira. Você é dentista, médico, arquiteto, engenheiro. Não fez faculdade de administração e, de repente, precisa entender de DRE, fluxo de caixa e capital de giro para tocar o negócio. Não saber tudo isso é normal. O problema não é a falta de conhecimento — é não saber a quem cabe cada responsabilidade.
+E isso acontece o tempo todo porque o dono de uma pequena ou média empresa quase nunca veio da área financeira. Você é dentista, médico, arquiteto, engenheiro. Não fez faculdade de administração e, de repente, precisa entender de DRE, fluxo de caixa e capital de giro para tocar o negócio. Não saber tudo isso é normal. O problema não é a falta de conhecimento — é não saber a quem cabe cada responsabilidade.
 
 ## Como saber a quem perguntar
 

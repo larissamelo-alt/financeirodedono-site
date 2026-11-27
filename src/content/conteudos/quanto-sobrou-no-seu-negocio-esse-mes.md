@@ -1,6 +1,6 @@
 ---
 titulo: "Quanto sobrou no seu negócio esse mês? A pergunta por trás da correria"
-descricao: "Não é falta de tempo, é falta de clareza. Por que o dono que não sabe quanto sobra no mês vive apagando incêndio — e como a previsibilidade financeira devolve o controle da agenda."
+descricao: "Não é falta de tempo, é falta de clareza. Por que o dono que não sabe quanto sobra no mês vive apagando incêndio, e como a previsibilidade devolve a agenda."
 data: 2026-06-10
 autor: "Jonny Elias"
 categoria: "Gestão Financeira"
@@ -15,7 +15,7 @@ Toda semana a mesma frase: "estou corrido, não tenho tempo". A gente parou de r
 
 Três autores diferentes chegaram no mesmo ponto por caminhos distintos: McKeown no *Essencialismo*, Martell no *Buy Back Your Time*, Keller em *A Única Coisa*. A ideia que se repete é simples: o tempo é o único recurso que não se recupera, e a maioria das pessoas gasta a maior parte dele justamente nos 80% que menos importam.
 
-Mas tem um ponto que esses livros não falam diretamente para o dono de uma PME de serviço.
+Mas tem um ponto que esses livros não falam diretamente para o dono de uma pequena ou média empresa.
 
 ## Sem saber quanto sobra, tudo parece prioritário
 

@@ -6,13 +6,35 @@ import ArtigoLayout from "@/layouts/ArtigoLayout.astro";
 // É isto que faz cada conteúdo virar HTML de verdade (lido por Google e IAs).
 export async function getStaticPaths() {
   const artigos = await getCollection("conteudos", ({ data }) => !data.rascunho);
+
+  // "Leia também": até 3 artigos, primeiro os que dividem mais tags e a mesma
+  // categoria, depois os mais recentes. Materiais de apoio ficam de fora porque
+  // já aparecem no bloco de materiais.
+  function relacionadosDe(artigo: (typeof artigos)[number]) {
+    return artigos
+      .filter((a) => a.slug !== artigo.slug && !a.data.tags.includes("material de apoio"))
+      .map((a) => {
+        const tagsEmComum = a.data.tags.filter((t) => artigo.data.tags.includes(t)).length;
+        const mesmaCategoria = a.data.categoria === artigo.data.categoria ? 1 : 0;
+        return { a, pontos: tagsEmComum * 2 + mesmaCategoria };
+      })
+      .sort((x, y) => y.pontos - x.pontos || y.a.data.data.valueOf() - x.a.data.data.valueOf())
+      .slice(0, 3)
+      .map(({ a }) => ({
+        slug: a.slug,
+        titulo: a.data.titulo,
+        descricao: a.data.descricao,
+        categoria: a.data.categoria,
+      }));
+  }
+
   return artigos.map((artigo) => ({
     params: { slug: artigo.slug },
-    props: { artigo },
+    props: { artigo, relacionados: relacionadosDe(artigo) },
   }));
 }
 
-const { artigo } = Astro.props;
+const { artigo, relacionados } = Astro.props;
 const { Content } = await render(artigo);
 ---
 
@@ -25,6 +47,8 @@ const { Content } = await render(artigo);
   categoria={artigo.data.categoria}
   capa={artigo.data.capa}
   slug={artigo.slug}
+  faq={artigo.data.faq}
+  relacionados={relacionados}
 >
   <Content />
 </ArtigoLayout>

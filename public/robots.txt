@@ -1,4 +1,21 @@
+# Todos os robôs podem ler o site inteiro.
 User-agent: *
+Allow: /
+
+# Robôs de busca e de IA liberados de forma explícita, para que um bloqueio
+# geral no futuro não os pegue sem querer.
+User-agent: Googlebot
+User-agent: Google-Extended
+User-agent: Bingbot
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: ClaudeBot
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: Applebot-Extended
 Allow: /
 
 Sitemap: https://www.financeirodedono.com.br/sitemap-index.xml

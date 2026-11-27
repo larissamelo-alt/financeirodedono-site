@@ -31,7 +31,7 @@ const ProblemSection = () => {
           </ScrollReveal>
           <ScrollReveal delay={100}>
             <p className="text-muted-foreground leading-relaxed lg:pt-2">
-              A maioria dos donos de empresa de serviço toma essas decisões no impulso. Só descobre que errou quando o caixa já travou.
+              A maioria dos donos de empresa toma essas decisões no impulso. Só descobre que errou quando o caixa já travou.
             </p>
           </ScrollReveal>
         </div>

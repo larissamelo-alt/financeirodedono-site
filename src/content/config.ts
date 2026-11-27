@@ -26,6 +26,12 @@ const conteudos = defineCollection({
     capa: z.string().optional(),
     // Marque true enquanto está escrevendo. Rascunho não aparece no site publicado.
     rascunho: z.boolean().default(false),
+    // Perguntas frequentes (opcional). Cada item tem "pergunta" e "resposta".
+    // O layout mostra a seção "Perguntas frequentes" no fim do artigo e gera o
+    // FAQPage nos dados estruturados — o texto visível e o dos robôs ficam iguais.
+    faq: z
+      .array(z.object({ pergunta: z.string(), resposta: z.string() }))
+      .default([]),
   }),
 });
 
